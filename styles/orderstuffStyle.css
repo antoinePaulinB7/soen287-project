@@ -1,0 +1,53 @@
+body{
+    
+}
+
+.ProfileTable {
+    border-collapse: separate;
+    text-align: center;
+     margin-left: auto;
+     margin-right: auto;
+    width:75%
+}
+.ProfileTable th {
+    text-align: center;
+    background-color: blue;
+    color: white;
+    padding: 4px 8px;
+}
+
+.ProfileTable td {
+    border: 1px solid lightslategray;
+    padding: 4px 8px;
+    text-align: center;
+}
+
+
+.ProfileSubHeader {
+    background-color: darkslategray;
+    color: white;
+    text-align: center;
+}
+
+.ProfileRest:nth-child(odd) td {
+    background-color: whitesmoke;
+    text-align: center;
+}
+
+.ProfileRest:nth-child(even) td {
+    background-color: lightcyan;
+    text-align: center;
+}
+.buttonClass 
+{
+    text-align: center;
+}
+.ProfileHeader
+{
+    text-align:center;
+}
+
+
+
+
+
