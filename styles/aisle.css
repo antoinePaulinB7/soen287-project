@@ -1,0 +1,24 @@
+.jumbotron{
+    background-color: #943a35;
+    color:white;
+}
+.tab-content{
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    padding:10px;
+}
+.nav-tabs{
+    margin-bottom: 0;
+}
+.sidebar {
+    flex: 0 0 230px;
+    background-color: rgb(247, 247, 247); 
+} 
+.card{
+    width: 250px;
+}
+.card-img-top{
+    width: 150px;
+    height: 150px;
+}
