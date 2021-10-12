@@ -14,7 +14,7 @@ body {
 .topnavi {
   margin:auto;
   margin-top: 10px;
-  margin-bottom: 30px;
+  margin-bottom: 60px;
 }
 .topnavi li span {
   position: relative;
@@ -118,6 +118,7 @@ body {
 }
 
 .topfooter {
+  margin-top:70px;
   text-align: center;
   margin-bottom: 15px;
   font-size: 15px;
