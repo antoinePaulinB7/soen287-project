@@ -1,0 +1,65 @@
+body {
+  background-color:#FF7F7F;
+ 
+  font-family:verdana;
+  
+  
+}
+
+.container {
+  background-color:white;
+  border: single;
+  display:grid;
+  text-align:center;
+  margin: 0 auto;
+  width:50%;
+  border-radius: 10px;
+  padding-top:20px;
+  margin-top:200px;
+  padding-bottom: 20px;
+}
+
+#login-header{
+  font-size:30px;
+  font-family:Arial;
+  margin: 0 auto;
+}
+#email{
+  
+  text-align:center;
+  margin: 0 auto;
+  
+}
+
+#Email{
+  padding-top:20px;
+
+}
+
+#password{
+  margin: 0 auto;
+  text-align:center;
+}
+
+#submit{
+  text-align:center;
+  margin: 0 auto;
+  position:static;
+}
+
+#reset{
+  text-align:center;
+  margin: 0 auto;
+  position:relative;
+  top:5px;
+
+}
+#forgot{
+  text-align:center;
+  margin: 0 auto;
+  position:relative;
+  top:10px;
+}
+
+
+
