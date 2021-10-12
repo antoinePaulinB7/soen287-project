@@ -2,18 +2,23 @@
 <html>
   <head>
     <link rel="stylesheet" href="/styles/productPage.css" ) />
-    <meta charset="UTF-8" />
+    <meta
+      charset="UTF-8"
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+    />
     <title>Red Tomatoes</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
   </head>
+
   <body style="margin: auto">
     <div class="top">
       <div class="banner">
         <p class="center">
-          <img src="/images/logo.png" alt="logo" />
+          <img src="images/logo.png" alt="logo" />
         </p>
       </div>
       <div class="topnav">
@@ -24,10 +29,12 @@
       </div>
     </div>
 
+    <div style="flex-direction: column; display: flex;">
     <div class="topnavi">
       <li>
         <span><a href="#">Home</a></span>
       </li>
+
       <li>
         <span><a href="#">Aisle</a></span>
       </li>
@@ -35,14 +42,13 @@
         <span><a href="#">Fruits & Vegetables</a></span>
       </li>
       <li>
-        <span
-          ><a class="active" href="#redtomatoes">Red Cluster Tomatoes</a></span
-        >
+        <span><a class="active" href="#redtomatoes">Red Cluster Tomatoes</a></span>
       </li>
     </div>
+
     <div class="container">
       <div class="left">
-        <img
+        <img width="300px" height="auto" class="img-thumbnail"
           src="https://cdn.pixabay.com/photo/2014/10/04/17/32/tomato-473764_1280.jpg"
           alt="Tomato"
         />
@@ -61,7 +67,7 @@
           <input type="text" class="count" value="1" />
           <div class="btncart">+</div>
         </div>
-        <button class="btn add">Add to cart</button>
+        <button class="btn add">Add to Cart</button>
         <br /><br />
         <div class="productInfo">
           <div class="description">
@@ -78,6 +84,7 @@
         </div>
       </div>
     </div>
+  </div>
 
     <div class="topfooter">Prices may be modified without prior notice.</div>
     <div class="footer">

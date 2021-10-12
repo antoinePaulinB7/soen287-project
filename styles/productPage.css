@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
   max-height: 100%;
   max-width: 100%;
 }
@@ -27,8 +28,9 @@ html, body {
   text-align: center;
 }
 .topnavi {
-  margin-left: 100px;
+  margin:auto;
   margin-top: 10px;
+  margin-bottom: 30px;
 }
 .topnavi li span {
   position: relative;
@@ -45,7 +47,6 @@ html, body {
   color: rgb(32, 32, 32);
   text-decoration: none;
 }
-/* Add a black background color to the top navigation */
 .topnav {
   background-color: white;
   justify-content: space-evenly;
@@ -54,8 +55,6 @@ html, body {
   border-bottom-width: 1px;
   display: flex;
 }
-
-/* Style the links inside the navigation bar */
 .topnav a {
   float: left;
   color: black;
@@ -64,25 +63,24 @@ html, body {
   text-decoration: none;
   font-size: 17px;
 }
-
-/* Change the color of links on hover */
 .topnav a:hover {
   background-color: #ddd;
   color: black;
 }
-
 .container {
-  width: 100%;
-  margin-bottom: 100px;
   flex-direction: row;
-  display: flex;
+  margin-bottom: 100px;
   margin-top: 90px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: auto;
 }
 .left img {
-  width: 300px;
   height: auto;
   margin-right: 30px;
-  margin-left: 130px;
+  max-width: 100%;
+  height: auto;
 }
 .counter {
   display: flex;
@@ -95,7 +93,7 @@ html, body {
   width: 250px;
 }
 .btncart {
-  width:50px;
+  width: 50px;
   height: 50px;
   border-color: #d9d9d9;
   border-style: solid;
@@ -110,7 +108,7 @@ html, body {
   cursor: pointer;
 }
 .count {
-  width:60px;
+  width: 60px;
   height: 40px;
   font-size: 20px;
   border-width: 0px;
@@ -142,8 +140,7 @@ html, body {
 }
 .right p1 {
   font-size: 30px;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-    sans-serif;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 .right p2 {
   font-size: 25px;
@@ -156,16 +153,18 @@ html, body {
   font-size: 18px;
 }
 .descriptionText {
-  width: 300px;
+  max-width: 300px;
+  flex-grow: auto;
 }
 
 .description {
-  width: 600px;
+  flex-grow: auto;
+  max-width: 600px;
   margin-top: 10px;
   margin-bottom: 15px;
   font-size: 25px;
   padding-top: 10px;
-  padding-bottom:10px;
+  padding-bottom: 10px;
   border-top-style: solid;
   border-bottom-style: solid;
   border-top-color: darkgrey;
@@ -174,27 +173,27 @@ html, body {
   border-top-width: 1px;
   font-size: 24px;
   flex-direction: row;
-  display:flex;
+  display: flex;
   justify-content: space-between;
 }
-.divDescription{
-  flex-direction: row; 
+.divDescription {
+  flex-direction: row;
   display: flex;
   align-items: center;
 }
-.seeMore{
-    padding-right:10px;
-    cursor: pointer;
+.seeMore {
+  padding-right: 10px;
+  cursor: pointer;
 }
-.productInfo{
-  width: min-content; 
-  padding: 10px
+.productInfo {
+  max-width: 600px;
+  padding: 10px;
 }
 .footer {
   background-color: grey;
   height: 300px;
   max-width: 100%;
-  padding: 20px;
+  padding: 10px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -216,7 +215,6 @@ html, body {
   background: #3b5998;
   color: white;
   border-radius: 50%;
-
 }
 .fa-twitter {
   background: #55acee;
