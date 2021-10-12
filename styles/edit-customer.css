@@ -1,18 +1,21 @@
 body {
     margin: 0;
     padding-top: 40px;
-    background: #bc1a1a;
     height: 100%;
 }
 
-.container{
+main {
+  background: #bc1a1a;
+}
+
+/* .container{
     background-color: white;
     margin-top: 0px;
     margin-bottom: 0px;
     margin-left: 200px;
     margin-right: 200px;
     padding-bottom: 100px;
-}
+} */
 
 
 .user-avatar{
