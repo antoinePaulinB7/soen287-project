@@ -1,96 +1,27 @@
-body {
-    margin: 0;
-}
-
-.banner {
-    background: #fdfdfd;
-}
-
-.banner__content {
-    padding: 20px;
-    max-width: 500px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-}
-
-.banner__text {
-    flex-grow: 1;
-    line-height: 1.4;
-    font-family: "Quicksand", sans-serif;
-}
-
-.banner__close {
-    background: none;
-    border: none;
-    cursor: pointer;
-}
-
-.banner__text,
-.banner__close > span {
-    color: #bc1a1a;
-}
-.header {
-    padding: 30px; /* some padding */
-    text-align: center; /* center the text */
-    background: #bc1a1a; /* green background */
-    color: white; /* white text color */
-}
-
-/* Increase the font size of the <h1> element */
-.header h1 {
-    font-size: 35px;
-}
-.footer {
-    padding: 20px; /* Some padding */
-    text-align: left; /* Center text*/
-    background: white; /* Grey background */
-    color:#bc1a1a;
-}
-/* Style the top navigation bar */
-.navbar {
-    overflow: hidden; /* Hide overflow */
-    background-color: #333; /* Dark background color */
-}
-
-/* Style the navigation bar links */
-.navbar a {
-    float: left; /* Make sure that the links stay side-by-side */
-    display: block; /* Change the display to block, for responsive reasons (see below) */
-    color: white; /* White text color */
-    text-align: center; /* Center the text */
-    padding: 15px; /* Add some padding */
-    text-decoration: none; /* Remove underline */
-}
-/* Change color on hover/mouse-over */
-.navbar a:hover {
-    background-color: white; /* Grey background color */
-    color: black; /* Black text color */
-}
-
-/* Ensure proper sizing */
-* {
-box-sizing: border-box;
-}
-
-/* Column container */
-.row {
-display: flex;
-flex-wrap: wrap;
+.homepage {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 /* Create two unequal columns that sits next to each other */
 /* Sidebar/left column */
 .side {
-flex: 17%; /* Set the width of the sidebar */
-background-color: #bc1a1a; /* Grey background color */
-padding: 20px; /* Some padding */
-color: black;
+  flex: 1 1 250px;
+  /* Set the width of the sidebar */
+  background-color: #bc1a1a;
+  /* Grey background color */
+  padding: 20px;
+  /* Some padding */
+  color: white;
 }
 
 /* Main column */
+
 .main {
-flex: 70%; /* Set the width of the main content */
-background-color: white; /* White background color */
-padding: 20px; /* Some padding */
+  flex: 3 1 300px;
+  /* Set the width of the main content */
+  background-color: white;
+  /* White background color */
+  padding: 20px;
+  /* Some padding */
 }
