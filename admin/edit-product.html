@@ -17,24 +17,32 @@
         <form>
             <table>
                 <tr>
+                    <td style="width:120px"><label for="p_id">Product ID#: </label></td>
+                    <td>24052</td>
+                </tr>  
+                <tr>
                     <td style="width:120px;"><label for="p_name">Product Name: </label></td>
                     <td><input type="text" id="p_name" name="p_name"></td>
                 </tr> 
                 <tr>
-                    <td style="width:120px"><label for="p_id">Product ID: </label></td>
-                    <td><input type="text" id="p_id" name="p_id"></td>
-                </tr>  
-                <tr>
                     <td style="width:120px"><label for="description">Description: </label></td>
-                    <td><input type="text" id="description" name="description"></td>
+                    <td><textarea id="description" name="description">Product description.</textarea></td>
                 </tr> 
                 <tr>
                     <td style="width:120px"><label for="p_image">Image: </label></td>
                     <td><input type="file" accept="image/png, image/jpeg, image/jpg"id="p_image" name="p_image"></td>
                 </tr>
                 <tr>
-                    <td style="width:120px"><label for="price">Price: </label></td>
-                    <td><input type="number" id="price" name="price"></td>
+                    <td style="width:120px"><label for="aisle">Aisle: </label></td>
+                    <td><select id="aisle" name="aisle">
+                        <option value="fruits-and-vegetables">Fruits & Vegetables</option>
+                        <option value="dairy-and-eggs">Dairy & Eggs</option>
+                        <option value="meat-and-poultry">Meat & Poultry</option>
+                    </select></td>
+                </tr>
+                <tr>
+                    <td style="width:120px"><label for="price">Price ($): </label></td>
+                    <td> <input type="number" id="price" name="price"></td>
                 </tr> 
                 <tr>
                     <td style="width:120px"><label for="price_display">Display Price: </label></td>
