@@ -1,12 +1,12 @@
 body {
   background-color:#FF7F7F;
  
-  font-family:verdana;
+  /* font-family:verdana; */
   
   
 }
 
-.container {
+/* .container {
   background-color:white;
   border: single;
   display:grid;
@@ -17,7 +17,7 @@ body {
   padding-top:20px;
   margin-top:200px;
   padding-bottom: 20px;
-}
+} */
 
 #login-header{
   font-size:30px;
