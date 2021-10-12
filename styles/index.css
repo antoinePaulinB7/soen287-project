@@ -1,0 +1,27 @@
+.homepage {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Create two unequal columns that sits next to each other */
+/* Sidebar/left column */
+.side {
+  flex: 1 1 250px;
+  /* Set the width of the sidebar */
+  background-color: #bc1a1a;
+  /* Grey background color */
+  padding: 20px;
+  /* Some padding */
+  color: white;
+}
+
+/* Main column */
+
+.main {
+  flex: 3 1 300px;
+  /* Set the width of the main content */
+  background-color: white;
+  /* White background color */
+  padding: 20px;
+  /* Some padding */
+}

@@ -1,6 +1,10 @@
-body {
-    margin: 0;
+:root {
+  --bs-gutter-x: 0px;
 }
+
+/* body {
+    margin: 0;
+} */
 
 .banner {
     background: #fdfdfd;
@@ -74,10 +78,10 @@ box-sizing: border-box;
 }
 
 /* Column container */
-.row {
+/* .row {
 display: flex;
 flex-wrap: wrap;
-}
+} */
 
 /* Create two unequal columns that sits next to each other */
 /* Sidebar/left column */

@@ -1,8 +1,11 @@
 body {
     margin: 0;
     padding-top: 40px;
-    background: #bc1a1a;
     height: 100%;
+}
+
+main {
+  background: #bc1a1a;
 }
 
 /* .container{
