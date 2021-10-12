@@ -13,7 +13,8 @@
 }
 .sidebar {
     flex: 0 0 230px;
-    background-color: rgb(247, 247, 247); 
+    background-color: rgb(247, 247, 247);
+    padding: 30px;
 } 
 .card{
     width: 250px;
