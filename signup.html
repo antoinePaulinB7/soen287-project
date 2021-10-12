@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
-<head>
- <title> Sign Up Page </title>  
-    <link rel= "stylesheet" href ="signupstyle.css"
-</head>
+   <head>
+   <title> Sign Up Page </title>  
+      <link rel= "stylesheet" href="styles/signupstyle.css">
+   </head>
    <body> 
     
         <div class ="signup-form">
         <h1> Sign Up Now </h1>
-        <form>
+        <form action="signup.php">
         <label>First Name</label>
         <input type ="text"placeholder="">
         <label>Last Name</label>
@@ -19,20 +19,23 @@
         <input type="password"placeholder="">
         <label>Confirm Password</label>
         <input type="password"placeholder="">
-        <input type ="button"value= "Submit">
-        <input type ="button"value= "Reset">
-            
+         <button type="submit">
+            Submit
+         </button>
+         <button type="submit" formaction="index.html">
+            Reset
+         </button>
     
         </form>
         <p>By clicking the sign up button, you agree to our terms and services<br>
-        <a href="#">Terms and Conditions</a> and <a href ="#">Policy and Privacy agreements</a>
+        <a href="about-us.html">Terms and Conditions</a> and <a href ="about-us.html">Policy and Privacy agreements</a>
     
         </p>
        
         </div>
 
-       <p>Already have an account? <a href="#">Login Here</a></p>
+       <p>Already have an account? <a href="login.html">Login Here</a></p>
         
        
     </body> 
-    </html>
+   </html>
