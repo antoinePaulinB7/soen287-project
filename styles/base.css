@@ -50,7 +50,7 @@
     font-size: 35px;
 }
 .footer {
-    padding: 20px; /* Some padding */
+    padding: 30px; /* Some padding */
     text-align: left; /* Center text*/
     background: var(--bs-gray-100); /* Grey background */
     color:#b20a08;
@@ -69,6 +69,8 @@
 .navbar {
     overflow: hidden; /* Hide overflow */
     background-color: #333; /* Dark background color */
+    padding-left: 5%; /* Add some padding */
+    padding-right: 5%; /* Add some padding */
 }
 
 /* Style the navigation bar links */
@@ -77,7 +79,7 @@
     display: block; /* Change the display to block, for responsive reasons (see below) */
     color: white; /* White text color */
     text-align: center; /* Center the text */
-    padding: 15px; /* Add some padding */
+    padding: 5px; /* Add some padding */
     text-decoration: none; /* Remove underline */
 }
 /* Change color on hover/mouse-over */
@@ -102,7 +104,7 @@ flex-wrap: wrap;
 .side {
 flex: 17%; /* Set the width of the sidebar */
 background-color: #b20a08; /* Grey background color */
-padding: 20px; /* Some padding */
+padding: 50px; /* Some padding */
 color: black;
 }
 
@@ -110,7 +112,7 @@ color: black;
 .main {
 flex: 70%; /* Set the width of the main content */
 background-color: white; /* White background color */
-padding: 20px; /* Some padding */
+padding: 50px; /* Some padding */
 }
 
 .social {
