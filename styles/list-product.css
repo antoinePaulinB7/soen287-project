@@ -1,0 +1,51 @@
+table.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.text {
+  text-align: center;
+}
+.title {
+  font-size: 30px;
+  font-family: sans-serif;
+  width: 80%;
+  margin: auto;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+.btnadd {
+  float: right;
+  margin-bottom: 20px;
+  background-color: lightgray;
+  padding: 8px;
+  border-color: black;
+  color: black;
+  text-decoration: none;
+  font-weight: 10px;
+}
+
+.btnactions {
+  background-color: lightgray;
+  padding: 8px;
+  border-color: black;
+  color: black;
+  text-decoration: none;
+  font-weight: 10px;
+}
+
+.product img {
+  width: 100px;
+  height: auto;
+}
+
+table {
+  border-collapse: collapse;
+  overflow-x: x-scroll;
+  overflow-x: visible;
+}
+
+table td,
+table th {
+  border: 1px solid black;
+}
