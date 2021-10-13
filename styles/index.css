@@ -8,11 +8,11 @@
 .side {
   flex: 1 1 250px;
   /* Set the width of the sidebar */
-  background-color: #b20a08;
+  background-color: rgb(247, 247, 247);
   /* Grey background color */
-  padding: 20px;
+  padding: 30px;
   /* Some padding */
-  color: white;
+  /*color: white; */
 }
 
 /* Main column */
@@ -22,6 +22,6 @@
   /* Set the width of the main content */
   background-color: white;
   /* White background color */
-  padding: 20px;
+  padding: 30px;
   /* Some padding */
 }
