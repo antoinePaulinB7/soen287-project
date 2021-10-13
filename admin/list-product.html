@@ -1,119 +1,138 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-  <title>Product List</title>
-  <link rel="stylesheet" href="../styles/base.css">
-  <link rel="stylesheet" href="../styles/list-product.css" />
-
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-</head>
-
-<body>
-  <nav>
-    <div class="banner">
-      <div class="banner__content">
-        <div class="banner__text">
-          <strong>Start Shopping Now!</strong>
+  <head>
+    <title>Product List</title>
+    <link rel="stylesheet" href="../styles/base.css" />
+    <link rel="stylesheet" href="../styles/list-product.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <nav>
+      <div class="banner">
+        <div class="banner__content">
+          <div class="banner__text">
+            <strong>Start Shopping Now!</strong>
+          </div>
+          <button class="banner__close" type="button">
+            <span class="material-icons"> close </span>
+          </button>
         </div>
-        <button class="banner__close" type="button">
-          <span class="material-icons">
-            close
-          </span>
-        </button>
       </div>
-    </div>
-    <div class="header">
-      <img src="../images/logo.png" alt="logo" />
-    </div>
-    <div class="navbar">
-      <a href="../index.html">Home</a>
-      <a href="../aisle.html">Aisles</a>
-      <a href="../signup.html">Sign Up</a>
-      <a href="../login.html">Log In</a>
-      <a href="#">Contact Us</a>
-      <a href="../cart.html">Cart</a>
-    </div>
-  </nav>
-  <main>
-    <h3 class="title">Product List</h3>
-      <form>
+      <div class="header">
+        <img src="images/logo.png" alt="logo" />
+      </div>
+      <div class="navbar">
+        <a href="../index.html">Home</a>
+        <a href="../aisle.html">Aisles</a>
+        <a href="../signup.html">Sign Up</a>
+        <a href="../login.html">Log In</a>
+        <a href="#">Contact Us</a>
+        <a href="../cart.html">Cart</a>
+      </div>
+    </nav>
+
+    <main>
+      <h3 class="title">Product List</h3>
+      <div style="flex-direction: column; display: flex; margin:auto; width: 80%;">
         <div class="table-responsive">
-          <table class="center" BORDER="1" WIDTH="80%" CELLPADDING="4" CELLSPACING="3">
-          <tr>
+        <table
+          class="table"
+          BORDER="1"
+          cellpadding="4"
+          cellspacing="3"
+        >
+          <tr style="text-align: center">
             <th></th>
             <th>Product</th>
             <th>Inventory</th>
             <th>Type</th>
             <th>Price</th>
-            <th>Modify</th>
+            <th>Actions</th>
           </tr>
           <tr ALIGN="CENTER">
-            <td class="image"><img src="https://cdn.pixabay.com/photo/2014/10/04/17/32/tomato-473764_1280.jpg"
-                alt="Tomato" /></td>
+            <td class="product">
+              <img
+                src="https://cdn.pixabay.com/photo/2014/10/04/17/32/tomato-473764_1280.jpg"
+                alt="Tomato"
+              />
+            </td>
             <td>Red Cluster Tomates</td>
-            <td><input type="text" id="banana" value="347" disabled=true style="text-align: center;"></td>
+            <td>347</td>
             <td>Fruits & Vegetables</td>
-            <td><input type="text" id="banana" value="6.59" disabled=true style="text-align: center;"> $ /kg</td>
+            <td>6.59$ /kg</td>
             <td>
-              <input type="button" id="edit" value="edit">
-              <input type="button" id="delete" value="delete">
+              <a class="btnactions" href="edit-product.html" id="edit"> Edit</a>
+              <a class="btnactions" href="#" id="delete">Delete</a>
             </td>
           </tr>
           <tr ALIGN="CENTER">
-            <td class="image"><img src=https://cdn.pixabay.com/photo/2017/04/04/17/40/fruits-2202411_1280.jpg
-                alt="Banana" /></td>
+            <td class="product">
+              <img
+              src=https://cdn.pixabay.com/photo/2017/04/04/17/40/fruits-2202411_1280.jpg
+              alt="Banana" />
+            </td>
             <td>Banana</td>
-            <td><input type="text" id="banana" value="421" disabled=true style="text-align: center;"></td>
-            <td>Fruit & Vegetables</td>
-            <td><input type="text" id="banana" value="0.97" disabled=true style="text-align: center;"> $ /kg</td>
+            <td>421</td>
+            <td>Fruits & Vegetables</td>
+            <td>0.97$ /kg</td>
             <td>
-              <input type="button" id="edit" value="edit">
-              <input type="button" id="delete" value="delete">
+              <a class="btnactions" href="edit-product.html" id="edit"> Edit</a>
+              <a class="btnactions" href="#" id="delete">Delete</a>
             </td>
           </tr>
           <tr ALIGN="CENTER">
-            <td class="image"><img src=https://cdn.pixabay.com/photo/2020/02/28/10/44/healthy-4887101_1280.jpg
-                alt="Bread" /></td>
+            <td class="product">
+              <img
+              src=https://cdn.pixabay.com/photo/2020/02/28/10/44/healthy-4887101_1280.jpg
+              alt="Bread" />
+            </td>
             <td>Bread</td>
-            <td><input type="text" id="bread" value="56" disabled=true style="text-align: center;"></td>
+            <td>56</td>
             <td>Bread & Baked Products</td>
-            <td><input type="text" id="bread" value="2.99" disabled=true style="text-align: center;"> $ ea.</td>
+            <td>2.99$ ea.</td>
             <td>
-              <input type="button" id="edit" value="edit">
-              <input type="button" id="delete" value="delete">
+              <a class="btnactions" href="edit-product.html" id="edit"> Edit</a>
+              <a class="btnactions" href="#" id="delete">Delete</a>
             </td>
           </tr>
         </table>
-
         </div>
-    </form>
-    <div class="addbtn">
-      <button class="button">Add Product</button>
-    </div>
-  </main>
-
-
-  <footer>
-    <div class="footer">
-      <div class="contact">
-        <h2>Contact Us:</h2>
-        <p>Telephone: 123-456-7890</p>
-        <p>Email: TheBestestWebstore@gmail.com</p>
-        <p>Twitter: @TheBestest</p>
-        <p>Facebook: @TheBestestCa</p>
-        <p>Page by Omar</p>
+        <div class="addbtn" style="padding-top: 20px; padding-bottom: 20px;">
+          <a class="btnadd" href="#">Add Product</a>
+        </div>
       </div>
-      <div class="social">
-        <a href="https://www.facebook.com" class="fa fa-facebook"></a>
-        <a href="https://www.twitter.com" class="fa fa-twitter"></a>
-        <a href="https://www.youtube.com" class="fa fa-youtube"></a>
-      </div>
-    </div>
-  </footer>
-</body>
+    </main>
 
+    <footer>
+      <div class="footer">
+        <div class="contact">
+          <h2>Contact Us:</h2>
+          <p>Telephone: 123-456-7890</p>
+          <p>Email: TheBestestWebstore@gmail.com</p>
+          <p>Twitter: @TheBestest</p>
+          <p>Facebook: @TheBestestCa</p>
+          <p>Page by Kahina</p>
+        </div>
+        <div class="social">
+          <a href="https://www.facebook.com" class="fa fa-facebook"></a>
+          <a href="https://www.twitter.com" class="fa fa-twitter"></a>
+          <a href="https://www.youtube.com" class="fa fa-youtube"></a>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>
