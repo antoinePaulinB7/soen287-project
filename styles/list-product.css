@@ -41,6 +41,8 @@ table.center {
 
 table {
   border-collapse: collapse;
+  overflow-x: x-scroll;
+  overflow-x: visible;
 }
 
 table td,
