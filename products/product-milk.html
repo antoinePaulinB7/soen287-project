@@ -23,6 +23,8 @@
     />
     <link rel="stylesheet" href="../styles/base.css"/>
     <link rel="stylesheet" href="../styles/product.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+    <script src="C:\Users\aliih\OneDrive\Documents\GitHub\soen287-project\scripts\detailedDescription.js"></script>
   </head>
   <body style="margin: auto">
     <nav>
@@ -96,8 +98,18 @@
             <div class="productInfo">
               <div class="description">
                 More Description
-                <div class="seeMore">+</div>
+                <div class="seeMore">
+                  <i class="fas fa-plus-circle" onclick="showIt()"></i>
+                </div>
               </div>
+              <div class="theDetailedDescription" id="theDetailedDescription" style="display: none;">
+                <p>
+                  Milk is avery simple ingredient that is a part of many recipes and dishes making it a very big deal what quality of milk should the average person buy.
+                  Fortunately our milk comes from cows that we own on our farms.
+                  These cows are feed very well while being maintained in a very humane way.
+                  <i class="fas fa-minus-circle" onclick="hideIt()"></i>
+                </p>       
+              </div>  
               <p6 class="descriptionText">
                 Our online grocery store tries to give you the best possible
                 experience. However, we are not responsible for the condition in

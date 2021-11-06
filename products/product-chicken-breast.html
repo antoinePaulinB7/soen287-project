@@ -21,8 +21,10 @@
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
+    <script src="C:\Users\aliih\OneDrive\Documents\GitHub\soen287-project\scripts\detailedDescription.js"></script>
     <link rel="stylesheet" href="../styles/base.css"/>
     <link rel="stylesheet" href="../styles/product.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
   </head>
   <body style="margin: auto">
     <nav>
@@ -96,8 +98,18 @@
             <br /><br />
             <div class="productInfo">
               <div class="description">
-                More Description
-                <div class="seeMore">+</div>
+                <p>More Description</p>
+                <div class="seeMore">
+                  <i class="fas fa-plus-circle" onclick="showIt()"></i>
+                </div>
+                <div class="theDetailedDescription" id="theDetailedDescription" style="display: none;">
+                  <p>
+                    Our chicken breast are extracted from chickens that are in our Bestest farms. The chickens on our farms are treated with the utmost of humanity and are feed organically 
+                    while also being exposed to a good amount of sunlight each day which is healthy for the chickens and produces better quality meat.
+                    While these chicken breasts are of premium quality they are very affordable which is what makes our chicken breasts known worldwide.
+                    <i class="fas fa-minus-circle" onclick="hideIt()"></i>
+                  </p>
+                </div>  
               </div>
               <p6 class="descriptionText">
                 Our online grocery store tries to give you the best possible
