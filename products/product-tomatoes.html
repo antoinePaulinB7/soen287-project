@@ -83,17 +83,31 @@
           <div class="right">
             <p1>Red Cluster Tomatoes</p1><br />
             <br />
-            <p2>$5.11 avg. ea.</p2>
+            <p2 id = "unit">$5.11 avg. ea.</p2>
             <p3>(775g avg.)</p3>
             <br />
             <p4>$6.59 /kg</p4>
             <br />
             <br />
             <div class="counter">
-              <input type="number" value="1" />
+              <input type="number" min="1" value="1" size="2" name="Quantity" id="quantity" />
             </div>
             <button class="btn-primary add">Add to Cart</button>
             <br /><br />
+              
+               
+              <button type="button" name="plus" onclick="addbutton()" style = " width:10% ;">+</button>
+              
+                <button type="button" name="minus" onclick="minusbutton()" style = "width:10% ;">-</button>
+              
+                <br /><br />
+              
+              
+              <label id = "priceDisplay"> </label>
+              
+              
+              
+              
             <div class="productInfo">
               <div class="description">
                 More Description
@@ -128,5 +142,34 @@
         </div>
       </div>
     </footer>
+       <script>
+          var quantity=document.getElementById("quantity");
+    var price;
+    var name=document.title;
+    var unit=document.getElementById("unit").innerHTML.match(/\d{1,}.\d\d/);
+
+function addbutton(){
+   quantity.value=Number(quantity.value)+1;
+   price=(quantity.value*unit).toFixed(2);
+       document.getElementById("priceDisplay").innerHTML="Price: "+price+" $";
+       
+
+   }
+   function minusbutton(){
+   if(quantity.value<=1){
+   quantity.value=1;
+   }
+      else quantity.value=Number(quantity.value)-1;
+
+
+      price=(quantity.value*unit).toFixed(2);
+          document.getElementById("priceDisplay").innerHTML="Price: "+price+" $";
+          
+
+      }
+      </script>
+      
+      
+
   </body>
 </html>
