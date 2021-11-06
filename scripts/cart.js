@@ -1,7 +1,11 @@
-Cart(){
+function Cart(){
     
 }
 
-CartProduct(){}
+function CartProduct(newAmount = 0){
+    this.amount = newAmount;
+}
 
-Product(){}
+function Product(){}
+
+cart = new Cart();
