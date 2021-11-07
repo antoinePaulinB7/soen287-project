@@ -1,159 +1,133 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta
-      charset="UTF-8"
-      name="viewport"
-      content="width=device-width, initial-scale=1"
-    />
-    <title>Red Cluster Tomatoes</title>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="../styles/base.css"/>
-    <link rel="stylesheet" href="../styles/product.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
 
-    <script src="../scripts/cart.js"></script>
-    <script src="../scripts/detailedDescription.js"></script>
-  </head>
-  <body style="margin: auto">
-    <nav>
-      <div class="banner">
-        <div class="banner__content">
-          <div class="banner__text">
-            <strong>Start Shopping Now!</strong>
-          </div>
-          <button class="banner__close" type="button">
-            <span class="material-icons"> close </span>
-          </button>
+<head>
+  <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Red Cluster Tomatoes</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles/base.css" />
+  <link rel="stylesheet" href="../styles/product.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+  <script src="../scripts/cart.js"></script>
+  <script src="../scripts/detailedDescription.js"></script>
+  <script src="../scripts/product.js"></script>
+</head>
+
+<body style="margin: auto">
+  <nav>
+    <div class="banner">
+      <div class="banner__content">
+        <div class="banner__text">
+          <strong>Start Shopping Now!</strong>
         </div>
+        <button class="banner__close" type="button">
+          <span class="material-icons"> close </span>
+        </button>
       </div>
-      <div class="header">
-        <img src="../images/logo.png" alt="logo" />
-      </div>
-      <div class="navbar">
-        <a href="../index.html">Home</a>
-        <a href="../aisles/aisle-1.html">Aisles</a>
-        <a href="../signup.html">Sign Up</a>
-        <a href="../login.html">Log In</a>
-        <a href="#">Contact Us</a>
-        <a href="../cart.html">Cart</a>
-      </div>
-    </nav>
-    <main>
-      <div class="top"></div>
-      <div style="flex-direction: column; display: flex">
-        <div class="topnavi">
-          <li>
-            <span><a href="../index.html">Home</a></span>
-          </li>
+    </div>
+    <div class="header">
+      <img src="../images/logo.png" alt="logo" />
+    </div>
+    <div class="navbar">
+      <a href="../index.html">Home</a>
+      <a href="../aisles/aisle-1.html">Aisles</a>
+      <a href="../signup.html">Sign Up</a>
+      <a href="../login.html">Log In</a>
+      <a href="../cart.html">Cart</a>
+    </div>
+  </nav>
+  <main>
+    <div class="top"></div>
+    <div style="flex-direction: column; display: flex">
+      <div class="topnavi">
+        <li>
+          <span><a href="../index.html">Home</a></span>
+        </li>
 
-          <li>
-            <span><a href="../aisles/aisle-1.html">Aisles</a></span>
-          </li>
-          <li>
-            <span><a href="../aisles/aisle-1.html">Fruits & Vegetables</a></span>
-          </li>
-          <li>
-            <span
-              ><a class="active" href="#redtomatoes"
-                >Red Cluster Tomatoes</a
-              ></span
-            >
-          </li>
+        <li>
+          <span><a href="../aisles/aisle-1.html">Aisles</a></span>
+        </li>
+        <li>
+          <span><a href="../aisles/aisle-1.html">Fruits & Vegetables</a></span>
+        </li>
+        <li>
+          <span><a class="active" href="#redtomatoes">Red Cluster Tomatoes</a></span>
+        </li>
+      </div>
+      <div class="container">
+        <div class="left">
+          <img width="300px" height="auto" class="img-thumbnail" src="../images/products/tomatoes.jpg"
+            alt="Cluster Tomatoes" />
         </div>
-        <div class="container">
-          <div class="left">
-            <img
-              width="300px"
-              height="auto"
-              class="img-thumbnail"
-              src="../images/products/tomatoes.jpg"
-              alt="Cluster Tomatoes"
-            />
+        <div class="right">
+          <p1>Red Cluster Tomatoes</p1><br />
+          <br />
+          <p2 id="unit">$5.11 avg. ea.</p2>
+          <p3>(775g avg.)</p3>
+          <br />
+          <p4>$6.59 /kg</p4>
+          <br />
+          <br />
+          <div class="counter">
+            <input type="number" min="1" value="1" size="2" name="Quantity" id="quantity" />
+            <button onClick="window.location.reload();">Refresh</button>
           </div>
-          <div class="right">
-            <p1>Red Cluster Tomatoes</p1><br />
-            <br />
-            <p2>$5.11 avg. ea.</p2>
-            <p3>(775g avg.)</p3>
-            <br />
-            <p4>$6.59 /kg</p4>
-            <br />
-            <br />
-            <div class="counter">
-              <input type="number" value="1" name="Quantity" id="quantity" min="1"/>
-              <button onClick="window.location.reload();">Refresh</button>
-           <script>
-            let quantity = document.getElementById("quantity"); 
-             if (sessionStorage.getItem("autosave")) {
-           quantity.value = sessionStorage.getItem("autosave");
-              }
- 
-            quantity.addEventListener("change", function() {
-             sessionStorage.setItem("autosave", quantity.value);
-             });
-        </script>
-            </div>
+          <button class="btn-primary add" onclick="cart.addProduct(3)">Add to Cart</button>
+          <br /><br />
 
-            <button class="btn-primary add" onclick="cart.addProduct(3)">Add to Cart</button>
-            <br /><br />
-            
-            <div class="productInfo">
-              <div class="description">
-                <h5>More Description</h5>
-                <div class="seeMore">
-                  <i class="fas fa-plus-circle" onclick="showIt()"></i>
-                </div>
+
+          <button type="button" name="plus" onclick="addbutton()" style=" width:10% ;">+</button>
+
+          <button type="button" name="minus" onclick="minusbutton()" style="width:10% ;">-</button>
+
+          <br /><br />
+
+
+          <label id="priceDisplay"> </label>
+
+
+
+
+          <div class="productInfo">
+            <div class="description">
+              <span>More Description</span>
+              <div class="seeMore">
+                <i class="fas fa-plus-circle" onclick="showIt()"></i>
               </div>
-              <div class="theDetailedDescription" id="theDetailedDescription" style="display: none;">
-                <p>
-                  Our cluster tomatoes are grown on our farms and are pesticide free and are certainly organic.
-                  They are also kept under natural sunlight so that we can harvest a higher quality peoduct.
-                  They are also grown seperately from all other vegetables to maintain their quality.
-                  <i class="fas fa-minus-circle" onclick="hideIt()"></i>
-                </p>
-              </div>  
-              <p class="descriptionText">
-                Our online grocery store tries to give you the best possible
-                experience. However, we are not responsible for the condition in
-                which you receive your order. Please contact the delivery
-                company if you have any issue with your delivery.
-              </p><br/>
             </div>
+            <p id="theDetailedDescription" class="is-hidden">
+              Our online grocery store tries to give you the best possible
+              experience. However, we are not responsible for the condition in
+              which you receive your order. Please contact the delivery
+              company if you have any issue with your delivery.
+              <i class="fas fa-minus-circle" onclick="hideIt()"></i>
+            </p><br />
           </div>
         </div>
+        <div class="topfooter">Prices may be modified without prior notice.</div>
       </div>
-      <div class="topfooter">Prices may be modified without prior notice.</div>
-    </main>
-    <footer>
-      <div class="footer">
-        <div class="contact">
-          <h2>Contact Us:</h2>
-          <p>Telephone: 123-456-7890</p>
-          <p>Email: TheBestestWebstore@gmail.com</p>
-          <p>Twitter: @TheBestest</p>
-          <p>Facebook: @TheBestestCa</p>
-          <p>Page by Kahina</p>
-        </div>
-        <div class="social">
-          <a href="https://www.facebook.com" class="fa fa-facebook"></a>
-          <a href="https://www.twitter.com" class="fa fa-twitter"></a>
-          <a href="https://www.youtube.com" class="fa fa-youtube"></a>
-        </div>
+    </div>
+  </main>
+  <footer>
+    <div class="footer">
+      <div class="contact">
+        <h2>Contact Us:</h2>
+        <p>Telephone: 123-456-7890</p>
+        <p>Email: TheBestestWebstore@gmail.com</p>
+        <p>Twitter: @TheBestest</p>
+        <p>Facebook: @TheBestestCa</p>
+        <p>Page by Kahina</p>
       </div>
-    </footer>
-  </body>
+      <div class="social">
+        <a href="https://www.facebook.com" class="fa fa-facebook"></a>
+        <a href="https://www.twitter.com" class="fa fa-twitter"></a>
+        <a href="https://www.youtube.com" class="fa fa-youtube"></a>
+      </div>
+    </div>
+  </footer>
+</body>
+
 </html>

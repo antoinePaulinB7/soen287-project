@@ -11,3 +11,6 @@
 
 ## Live Site
 * [Live site](https://bestestgroceries.glitch.me/)
+
+### To get to the admin side of the site
+* /admin

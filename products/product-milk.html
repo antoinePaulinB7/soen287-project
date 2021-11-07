@@ -1,34 +1,21 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta
-      charset="UTF-8"
-      name="viewport"
-      content="width=device-width, initial-scale=1"
-    />
-    <title>Milk</title>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="../styles/base.css"/>
-    <link rel="stylesheet" href="../styles/product.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
 
-    <script src="../scripts/cart.js"></script>
-    <script src="../scripts/detailedDescription.js"></script>
-  </head>
-  <body style="margin: auto">
+<head>
+  <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Milk</title><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles/base.css" />
+  <link rel="stylesheet" href="../styles/product.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+  <script src="../scripts/cart.js"></script>
+  <script src="../scripts/detailedDescription.js"></script>
+  <script src="../scripts/product.js"></script>
+</head>
+
+<body style="margin: auto">
     <nav>
       <div class="banner">
         <div class="banner__content">
@@ -48,7 +35,6 @@
         <a href="../aisles/aisle-1.html">Aisles</a>
         <a href="../signup.html">Sign Up</a>
         <a href="../login.html">Log In</a>
-        <a href="#">Contact Us</a>
         <a href="../cart.html">Cart</a>
       </div>
     </nav>
@@ -67,82 +53,63 @@
             <span><a href="../aisles/aisle-2.html">Dairy & Eggs</a></span>
           </li>
           <li>
-            <span
-              ><a class="active" href="#milk"
-                >Milk</a
-              ></span
-            >
+            <span><a class="active" href="#milk">Milk</a></span>
           </li>
         </div>
         <div class="container">
           <div class="left">
-            <img
-              width="300px"
-              height="auto"
-              class="img-thumbnail"
-              src="../images/products/milk.jpg"
-              alt="milk"
-            />
+            <img width="300px" height="auto" class="img-thumbnail" src="../images/products/milk.jpg" alt="milk" />
           </div>
           <div class="right">
             <p1>Milk 4L</p1><br />
             <br />
-            <p2 id= "unit">$6.56 ea.</p2>
+            <p2 id="unit">$6.56 ea.</p2>
             <br />
             <p4>$0.16 /100ml</p4>
             <br />
             <br />
-              
-              
-              
+
+
+
             <div class="counter">
               <input type="number" min="1" value="1" size="2" name="Quantity" id="quantity" />
               <button onClick="window.location.reload();">Refresh</button>
-           <script>
-            let quantity = document.getElementById("quantity"); 
-             if (sessionStorage.getItem("autosave")) {
-           quantity.value = sessionStorage.getItem("autosave");
-              }
- 
-            quantity.addEventListener("change", function() {
-             sessionStorage.setItem("autosave", quantity.value);
-             });
-        </script>
             </div>
             <button class="btn-primary add" onclick="cart.addProduct(2)">Add to Cart</button>
-              
+
+
             <br /><br />
-            <button type="button" name="plus" onclick="addbutton()" style = " width:10% ;">+</button>
-            <button type="button" name="minus" onclick="minusbutton()" style = "width:10% ;">-</button>
-            <br/><br/>
-            <label id = "priceDisplay"> </label>
-            
+
+            <button type="button" name="plus" onclick="addbutton()" style=" width:10% ;">+</button>
+
+            <button type="button" name="minus" onclick="minusbutton()" style="width:10% ;">-</button>
+
+            <br /><br />
+
+
+            <label id="priceDisplay"> </label>
+
+
+
             <div class="productInfo">
               <div class="description">
-                <h5>More Description</h5>
+                <span>More Description</span>
                 <div class="seeMore">
                   <i class="fas fa-plus-circle" onclick="showIt()"></i>
                 </div>
               </div>
-              <div class="theDetailedDescription" id="theDetailedDescription" style="display: none;">
-                <p>
-                  Milk is avery simple ingredient that is a part of many recipes and dishes making it a very big deal what quality of milk should the average person buy.
-                  Fortunately our milk comes from cows that we own on our farms.
-                  These cows are feed very well while being maintained in a very humane way.
-                  <i class="fas fa-minus-circle" onclick="hideIt()"></i>
-                </p>       
-              </div>  
-              <p class="descriptionText">
+              <p id="theDetailedDescription" class="is-hidden">
                 Our online grocery store tries to give you the best possible
                 experience. However, we are not responsible for the condition in
                 which you receive your order. Please contact the delivery
                 company if you have any issue with your delivery.
-              </p><br/>
+                <i class="fas fa-minus-circle" onclick="hideIt()"></i>
+              </p><br />
             </div>
           </div>
+          <div class="topfooter">Prices may be modified without prior notice.</div>
         </div>
       </div>
-      <div class="topfooter">Prices may be modified without prior notice.</div>
     </main>
     <footer>
       <div class="footer">
@@ -161,31 +128,6 @@
         </div>
       </div>
     </footer>
-      <script>
-          var quantity=document.getElementById("quantity");
-    var price;
-    var name=document.title;
-    var unit=document.getElementById("unit").innerHTML.match(/\d{1,}.\d\d/);
-
-function addbutton(){
-   quantity.value=Number(quantity.value)+1;
-   price=(quantity.value*unit).toFixed(2);
-       document.getElementById("priceDisplay").innerHTML="Price: "+price+" $";
-       
-
-   }
-   function minusbutton(){
-   if(quantity.value<=1){
-   quantity.value=1;
-   }
-      else quantity.value=Number(quantity.value)-1;
-
-
-      price=(quantity.value*unit).toFixed(2);
-          document.getElementById("priceDisplay").innerHTML="Price: "+price+" $";
-          
-
-      }
-      </script>
   </body>
+
 </html>

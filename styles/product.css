@@ -65,7 +65,14 @@ h5 {
   flex-wrap: wrap;
   justify-content: center;
   margin: auto;
+  padding: 0 5%;
 }
+
+.left {
+  flex-grow: 0;
+  max-width: 300px;
+}
+
 .left img {
   height: auto;
   margin-right: 30px;
@@ -128,7 +135,13 @@ h5 {
   text-align: center;
   margin-bottom: 15px;
   font-size: 15px;
+  flex-basis: 100%;
 }
+.right {
+  flex-grow: 1;
+  max-width: 600px;
+}
+
 .right p1 {
   font-size: 30px;
   /* font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif; */
@@ -148,7 +161,6 @@ h5 {
 }
 
 .description {
-  flex-grow: auto;
   max-width: 600px;
   margin-top: 10px;
   margin-bottom: 10px;
@@ -174,7 +186,10 @@ h5 {
 }
 .productInfo {
   max-width: 600px;
-  padding: 10px;
+}
+
+.description span {
+  flex-grow: 1;
 }
 
 .fa-plus-circle {
