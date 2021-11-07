@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "name": "Chicken breast",
+    "price": 17.61,
+    "description": "White chicken meat" 
+  },
+  {
+    "id": 2,
+    "name": "Milk",
+    "price": 6.56,
+    "description": "Cow milk (2% fat)"
+  },
+  {
+    "id": 3,
+    "name": "Tomatoes",
+    "price": 5.11,
+    "description": "Cluster of cherry tomatoes"
+  }
+]

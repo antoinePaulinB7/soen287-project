@@ -24,6 +24,8 @@
     <link rel="stylesheet" href="../styles/base.css"/>
     <link rel="stylesheet" href="../styles/product.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+
+    <script src="../scripts/cart.js"></script>
     <script src="../scripts/detailedDescription.js"></script>
   </head>
   <body style="margin: auto">
@@ -107,14 +109,14 @@
              });
         </script>
             </div>
-            <button class="btn-primary add">Add to Cart</button>
+            <button class="btn-primary add" onclick="cart.addProduct(2)">Add to Cart</button>
               
             <br /><br />
             <button type="button" name="plus" onclick="addbutton()" style = " width:10% ;">+</button>
             <button type="button" name="minus" onclick="minusbutton()" style = "width:10% ;">-</button>
             <br/><br/>
             <label id = "priceDisplay"> </label>
-              
+            
             <div class="productInfo">
               <div class="description">
                 <h5>More Description</h5>

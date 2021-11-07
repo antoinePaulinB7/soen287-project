@@ -24,6 +24,8 @@
     <link rel="stylesheet" href="../styles/base.css"/>
     <link rel="stylesheet" href="../styles/product.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+
+    <script src="../scripts/cart.js"></script>
     <script src="../scripts/detailedDescription.js"></script>
   </head>
   <body style="margin: auto">
@@ -92,10 +94,23 @@
             <br />
             <br />
             <div class="counter">
-              <input type="number" value="1" />
+              <input type="number" value="1" name="Quantity" id="quantity" min="1"/>
+              <button onClick="window.location.reload();">Refresh</button>
+           <script>
+            let quantity = document.getElementById("quantity"); 
+             if (sessionStorage.getItem("autosave")) {
+           quantity.value = sessionStorage.getItem("autosave");
+              }
+ 
+            quantity.addEventListener("change", function() {
+             sessionStorage.setItem("autosave", quantity.value);
+             });
+        </script>
             </div>
-            <button class="btn-primary add">Add to Cart</button>
-            <br/><br />
+
+            <button class="btn-primary add" onclick="cart.addProduct(3)">Add to Cart</button>
+            <br /><br />
+            
             <div class="productInfo">
               <div class="description">
                 <h5>More Description</h5>
