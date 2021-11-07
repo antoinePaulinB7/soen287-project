@@ -21,7 +21,7 @@
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
-    <script src="C:\Users\aliih\OneDrive\Documents\GitHub\soen287-project\scripts\detailedDescription.js"></script>
+    <script src="../scripts/detailedDescription.js"></script>
     <link rel="stylesheet" href="../styles/base.css"/>
     <link rel="stylesheet" href="../styles/product.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
@@ -95,28 +95,29 @@
               <input type="number" value="1" />
             </div>
             <button class="btn-primary add">Add to Cart</button>
-            <br /><br />
+            <br/><br/>
             <div class="productInfo">
               <div class="description">
-                <p>More Description</p>
+                <h5>More Description</h5>
                 <div class="seeMore">
                   <i class="fas fa-plus-circle" onclick="showIt()"></i>
                 </div>
-                <div class="theDetailedDescription" id="theDetailedDescription" style="display: none;">
-                  <p>
-                    Our chicken breast are extracted from chickens that are in our Bestest farms. The chickens on our farms are treated with the utmost of humanity and are feed organically 
-                    while also being exposed to a good amount of sunlight each day which is healthy for the chickens and produces better quality meat.
-                    While these chicken breasts are of premium quality they are very affordable which is what makes our chicken breasts known worldwide.
-                    <i class="fas fa-minus-circle" onclick="hideIt()"></i>
-                  </p>
-                </div>  
               </div>
-              <p6 class="descriptionText">
+              <div class="theDetailedDescription" id="theDetailedDescription" style="display: none;">
+                <p class="descriptionText">
+                  Our chicken breast are extracted from chickens that are in our Bestest farms. The chickens on our farms are treated with the utmost of humanity and are feed organically 
+                  while also being exposed to a good amount of sunlight each day which is healthy for the chickens and produces better quality meat.
+                  While these chicken breasts are of premium quality they are very affordable which is what makes our chicken breasts known worldwide.
+                  <i class="fas fa-minus-circle" onclick="hideIt()"></i>
+                </p>
+              <hr>
+              </div>
+              <p class="descriptionText">
                 Our online grocery store tries to give you the best possible
                 experience. However, we are not responsible for the condition in
                 which you receive your order. Please contact the delivery
-                company if you have any issue with your delivery.</p6
-              ><br />
+                company if you have any issue with your delivery.
+              </p><br/>
             </div>
           </div>
         </div>
