@@ -150,3 +150,8 @@ padding: 50px; /* Some padding */
 .fa-youtube {
   background: #bb0000;
 }
+
+.is-hidden {
+  display: none;
+  visibility: hidden;
+}
