@@ -92,7 +92,18 @@
             <br />
             <br />
             <div class="counter">
-              <input type="number" value="1" />
+              <input type="number" value="1" name="Quantity" id="quantity" min="1"/>
+              <button onClick="window.location.reload();">Refresh</button>
+           <script>
+            let quantity = document.getElementById("quantity"); 
+             if (sessionStorage.getItem("autosave")) {
+           quantity.value = sessionStorage.getItem("autosave");
+              }
+ 
+            quantity.addEventListener("change", function() {
+             sessionStorage.setItem("autosave", quantity.value);
+             });
+        </script>
             </div>
             <button class="btn-primary add">Add to Cart</button>
             <br /><br />
