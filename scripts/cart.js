@@ -7,8 +7,9 @@ class Cart {
     this.properties = properties;
   }
 
-  addProduct(productID, quantity, properties = {}) {
-    let item = this.items.find(item => item.productID == productID);
+  addProduct(productID, quantity = 1, properties = {}) {
+    let item = this.items.find(item => item.product.productID == productID);
+
     if (item) {
       item.quantity += quantity;
     } else {
@@ -75,8 +76,15 @@ class Item {
   quantity;
   properties;
 
-  constructor(product, quantity = 1, properties = {}) {
-    this.product = product;
+  constructor(productID, quantity = 1, properties = {}) {
+    let product = window.products[productID];
+
+    if (product) {
+      this.product = product;
+    } else {
+      this.product = new Product(productID, "Test", 10);
+    }
+
     this.quantity = quantity;
     this.properties = properties;
   }
@@ -104,6 +112,20 @@ class Product {
   }
 }
 
+function loadProducts() {
+  window.products = {};
+
+  fetch("/all-products.json")
+    .then(data => data.json())
+    .then(response => {
+      console.log(response);
+
+      response.forEach(element => {
+        window.products[element.id] = new Product(element.id, element.name, element.price, element.description);
+      });
+    });
+}
+
 function loadCart() {
   console.log("loading cart");
 
@@ -117,4 +139,5 @@ function loadCart() {
   }
 }
 
+loadProducts();
 loadCart();
