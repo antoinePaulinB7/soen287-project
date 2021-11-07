@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
+  <script src="../scripts/cart.js"></script>
   <link rel="stylesheet" href="../styles/base.css">
   <link rel="stylesheet" href="../styles/aisle.css">
 
@@ -64,6 +65,20 @@
         <div class="col text-center">
           <div class="row">
             <div class="card">
+              <a href="../products/product-tomatoes.html">
+                <img class="card-img-top mx-auto d-block" src="../images/products/tomatoes.jpg" alt="Cluster Tomatoes">
+              </a>
+              <div class="card-body">
+                <h5 class="card-title">Cluster Tomatoes</h5>
+                <p class="card-text text-muted">5 tomatoes/cluster on avg.</p>
+              </div>
+              <div class="card-footer">
+                <p>$5.11 avg. ea.</p>
+                <p><small class="text-muted">(775g avg.)<br>$6.59/kg.</small></p>
+                <button type="submit" class="btn btn-sm btn-primary" role="button" onclick="cart.addProduct(3)">Add to cart</button>
+              </div>
+            </div>
+            <div class="card">
               <a href="#">
                 <img class="card-img-top mx-auto d-block" src="../images/products/apple.jpg" alt="Apple">
               </a>
@@ -116,20 +131,6 @@
               <div class="card-footer">
                 <p>$0.66/100g</p>
                 <p><small class="text-muted">$6.59/kg.<br><br></small></p>
-                <button type="submit" class="btn btn-sm btn-primary" role="button">Add to cart</button>
-              </div>
-            </div>
-            <div class="card">
-              <a href="../products/product-tomatoes.html">
-                <img class="card-img-top mx-auto d-block" src="../images/products/tomatoes.jpg" alt="Cluster Tomatoes">
-              </a>
-              <div class="card-body">
-                <h5 class="card-title">Cluster Tomatoes</h5>
-                <p class="card-text text-muted">5 tomatoes/cluster on avg.</p>
-              </div>
-              <div class="card-footer">
-                <p>$5.11 avg. ea.</p>
-                <p><small class="text-muted">(775g avg.)<br>$6.59/kg.</small></p>
                 <button type="submit" class="btn btn-sm btn-primary" role="button">Add to cart</button>
               </div>
             </div>
