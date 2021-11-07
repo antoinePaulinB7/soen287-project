@@ -4,6 +4,9 @@
 
 .cart-footer {
   text-align: right;
+  float:right;
+  margin-top: 40px;
+  margin-left: 40px;
 }
 
 .cart-summary {
@@ -14,7 +17,11 @@
   border: 1px solid var(--bs-gray-200);
 }
 
-@media screen and (max-width: 767px) {
+input[type="number"] {
+  width: 100px;
+}
+
+@media screen and (max-width: 768px) {
   thead {
     display: none;
   }
@@ -43,5 +50,12 @@
 
   .cart-summary {
     display: block;
+  }
+
+  .cart-footer {
+    float:none;
+    margin-left: 0px;
+    margin-top: 10px;
+    height:auto;
   }
 }

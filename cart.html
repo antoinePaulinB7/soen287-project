@@ -44,6 +44,17 @@
   <main class="container">
     <form class="cart-form" action="/cart">
       <h1>Cart</h1>
+      <div class="cart-footer">
+        <div class="cart-summary">
+          <div>8 items</div>
+          <div>40$</div>
+          <div>QST: x$</div>
+          <div>GST: y$</div>
+          <div>Total: X$</div>
+          <button formaction="/checkout">Checkout</button><br>
+          <a href="index.html">Continue shopping</a>
+        </div>
+      </div>
       <div class="table-responsive">
         <table class="table">
           <thead>
@@ -106,18 +117,6 @@
             </td>
           </tr>
         </table>
-      </div>
-
-      <div class="cart-footer">
-        <div class="cart-summary">
-          <div>8 items</div>
-          <div>40$</div>
-          <div>QST: x$</div>
-          <div>GST: y$</div>
-          <div>Total: X$</div>
-          <button formaction="/checkout">Checkout</button>
-          <a href="index.html">Continue shopping</a>
-        </div>
       </div>
     </form>
   </main>
