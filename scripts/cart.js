@@ -148,7 +148,6 @@ class Cart {
         <div>GST: ${gst.toFixed(2)}$</div>
         <div>Total: ${total.toFixed(2)}$</div>
         <button formaction="/checkout">Checkout</button><br>
-        <a href="/">Continue shopping</a>
       `;
     } else {
       summaryHtml = ``;
