@@ -43,79 +43,26 @@
   <main class="container">
     <form class="cart-form" action="/cart">
       <h1>Cart</h1>
-      <div class="cart-footer">
-        <div class="cart-summary">
-          <div>8 items</div>
-          <div>40$</div>
-          <div>QST: x$</div>
-          <div>GST: y$</div>
-          <div>Total: X$</div>
-          <button formaction="/checkout">Checkout</button><br>
-          <a href="index.html">Continue shopping</a>
+      <div class="cart-summary-container">
+        <div class="table-responsive cart-container">
+          <table class="table js-cart">
+          </table>
         </div>
-      </div>
-      <div class="table-responsive">
-        <table class="table">
-          <thead>
-            <th>Item</th>
-            <th>Quantity</th>
-            <th>Price</th>
-            <th>Action</th>
-          </thead>
-          <tr>
-            <td>
-              <p>Salad</p>
-              <img
-                src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2670&q=80"
-                width="150" />
-            </td>
-            <td>
-              <input type="number" name="quantity_1" value="1">
-            </td>
-            <td>5$</td>
-            <td>
-              <button name="remove" value="1">Remove</button>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <p>Other Salad</p>
-              <img
-                src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2670&q=80"
-                width="150" />
-            </td>
-            <td>
-              <input type="number" name="quantity_2" value="3">
-            </td>
-            <td>15$</td>
-            <td>
-              <button name="remove" value="2">Remove</button>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <p>Blue Salad</p>
-              <img
-                src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2670&q=80"
-                width="150" />
-            </td>
-            <td>
-              <input type="number" name="quantity_3" value="4">
-            </td>
-            <td>20$</td>
-            <td>
-              <button name="remove" value="3">Remove</button>
-            </td>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>
-              <button formaction="/cart/update">Update Cart</button>
-            </td>
-          </tr>
-        </table>
+        <div class="cart-footer">
+          <div class="cart-summary js-cart-summary">
+            <div>8 items</div>
+            <div>40$</div>
+            <div>QST: x$</div>
+            <div>GST: y$</div>
+            <div>Total: X$</div>
+            <button formaction="/checkout">Checkout</button><br>
+            <a href="/">Continue shopping</a>
+          </div>
+        </div>
+        <script>
+          cart.render();
+          cart.renderSummary();
+        </script>
       </div>
     </form>
   </main>

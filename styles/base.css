@@ -155,3 +155,13 @@ padding: 50px; /* Some padding */
   display: none;
   visibility: hidden;
 }
+
+input[type="number"] {
+  width: calc(2em);
+  appearance: textfield;
+  text-align: center;
+}
+
+.quantity-wrapper {
+  display: inline-flex;
+}

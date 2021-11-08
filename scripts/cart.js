@@ -10,25 +10,49 @@ class Cart {
   addProduct(productID, quantity = 1, properties = {}) {
     let item = this.items.find(item => item.product.productID == productID);
 
+    if (quantity == 1) {
+      let quantityInput = document.querySelector("#quantity");
+      if (quantityInput) {
+        quantity = Number(quantityInput.value);
+      }
+    }
+
     if (item) {
       item.quantity += quantity;
     } else {
       this.items.push(new Item(productID, quantity, properties));
     }
 
-    this.storeCart();
+    this.updateCart();
+  }
+
+  increaseQuantity(index) {
+    this.items[index].quantity += 1;
+    this.updateCart();
+  }
+
+  decreaseQuantity(index) {
+    let quantity = this.items[index].quantity - 1;
+
+    if (quantity <= 0) {
+      this.items.splice(index, 1);
+    } else {
+      this.items[index].quantity = quantity;
+    }
+
+    this.updateCart();
   }
 
   updateQuantity(productID, quantity) {
-    let item = this.items.find(item => item.productID == productID);
+    let item = this.items.find(item => item.product.productID == productID);
     if (item) {
       if (quantity == 0) {
-        this.items = this.items.filter(item => item.productID != productID);
+        this.items = this.items.filter(item => item.product.productID != productID);
       } else {
         item.quantity = quantity;
       }
 
-      this.storeCart();
+      this.updateCart();
     }
   }
 
@@ -43,15 +67,15 @@ class Cart {
       this.properties[key] = value;
     }
 
-    this.storeCart();
+    this.updateCart();
   }
 
   setItemProperty(productID, key, value = null) {
-    let item = this.items.find(item => item.productID == productID);
+    let item = this.items.find(item => item.product.productID == productID);
     if (item) {
       this.item.setProperty(key, value);
 
-      this.storeCart();
+      this.updateCart();
     }
   }
 
@@ -59,10 +83,90 @@ class Cart {
     return this.items.reduce((acc, item) => acc + item.product.price * item.quantity, 0);
   }
 
+  render() {
+    let cartHtml;
+    
+    if (this.items.length) {
+      cartHtml = `
+        <thead>
+          <th>Item</th>
+          <th>Quantity</th>
+          <th>Price</th>
+          <th>Action</th>
+        </thead>
+        <tbody>
+        ${
+          this.items.map((item, index) => {
+            let product = item.product;
+            return `
+              <tr>
+                <td>
+                  <p>${product.name} - ${product.description}</p>
+                  <img
+                    src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2670&q=80"
+                    width="150" />
+                </td>
+                <td>
+                  <div class="quantity-wrapper">
+                    <input type="hidden" name="product[${index}]" value="${product.productID}">
+                    <button onclick="cart.increaseQuantity(${index})">+</button>
+                    <input type="number" name="quantity[${index}]" value="${item.quantity}" size="2" readonly>
+                    <button onclick="cart.decreaseQuantity(${index})">-</button>
+                  </div>
+                </td>
+                <td>${product.price.toFixed(2)}$</td>
+                <td>
+                  <button name="remove" onclick="cart.removeProduct(${product.productID})" value="1">Remove</button>
+                </td>
+              </tr>
+            `;
+          }).join('')
+        }
+        </tbody>
+      `;
+    } else {
+      cartHtml = `<tr><td><p>Cart is empty!</p><a href="/">Continue shopping</a></td></tr>`;
+    }
+
+    document.querySelectorAll('.js-cart').forEach(cart => cart.innerHTML = cartHtml);
+  }
+
+  renderSummary() {
+    let summaryHtml;
+    
+    if (this.items.length) {
+      let subtotal = this.items.reduce((acc, item) => acc + item.product.price * item.quantity, 0);
+      let quantity = this.items.reduce((acc, item) => acc + item.quantity, 0);
+      let qst = subtotal * 0.09975;
+      let gst = subtotal * 0.05;
+      let total = subtotal + qst + gst;
+
+      summaryHtml = `
+        <div>${quantity} item${(quantity > 1)?"s":""}</div>
+        <div>Subtotal: ${subtotal.toFixed(2)}$</div>
+        <div>QST: ${qst.toFixed(2)}$</div>
+        <div>GST: ${gst.toFixed(2)}$</div>
+        <div>Total: ${total.toFixed(2)}$</div>
+        <button formaction="/checkout">Checkout</button><br>
+        <a href="/">Continue shopping</a>
+      `;
+    } else {
+      summaryHtml = ``;
+    }
+
+    document.querySelectorAll('.js-cart-summary').forEach(cart => cart.innerHTML = summaryHtml);
+  }
+
   clear() {
     this.items = [];
     this.properties = {};
 
+    this.updateCart();
+  }
+
+  updateCart() {
+    this.render();
+    this.renderSummary();
     this.storeCart();
   }
 
