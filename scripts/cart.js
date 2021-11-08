@@ -103,8 +103,8 @@ class Cart {
                 <td>
                   <p>${product.name} - ${product.description}</p>
                   <img
-                    src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2670&q=80"
-                    width="150" />
+                    class="cart-image"
+                    src="${product.image}"/>
                 </td>
                 <td>
                   <div class="quantity-wrapper">
@@ -207,12 +207,14 @@ class Product {
   name;
   price;
   description;
+  image;
 
-  constructor(productID, name, price, description = "") {
+  constructor(productID, name, price, description = "", image = "/images/products/banana.jpg") {
     this.productID = productID;
     this.name = name;
     this.price = price;
     this.description = description;
+    this.image = image;
   }
 }
 
@@ -225,7 +227,7 @@ function loadProducts() {
       console.log(response);
 
       response.forEach(element => {
-        window.products[element.id] = new Product(element.id, element.name, element.price, element.description);
+        window.products[element.id] = new Product(element.id, element.name, element.price, element.description, element.image);
       });
     });
 }

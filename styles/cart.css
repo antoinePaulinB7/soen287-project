@@ -24,8 +24,11 @@
   flex-grow: 1;
 }
 
-.quantity-wrapper button {
-  width: 2rem;
+.cart-image {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  object-position: center center;
 }
 
 @media screen and (max-width: 767px) {
@@ -52,7 +55,7 @@
 
   td:first-child {
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
   }
 
   .cart-summary {
