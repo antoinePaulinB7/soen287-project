@@ -71,18 +71,14 @@
 
 
 
-            <div class="counter">
-              <input type="number" min="1" value="1" size="2" name="Quantity" id="quantity" />
-              <button onClick="window.location.reload();">Refresh</button>
+            <div class="quantity-wrapper">
+              <button type="button" name="plus" onclick="addbutton()">+</button>
+              <input type="number" min="1" value="1" size="2" name="Quantity" id="quantity" readonly/>  
+              <button type="button" name="minus" onclick="minusbutton()">-</button>
             </div>
             <button class="btn-primary add" onclick="cart.addProduct(2)">Add to Cart</button>
-
-
             <br /><br />
-
-            <button type="button" name="plus" onclick="addbutton()" style=" width:10% ;">+</button>
-
-            <button type="button" name="minus" onclick="minusbutton()" style="width:10% ;">-</button>
+            <button onClick="window.location.reload();">Refresh</button>
 
             <br /><br />
 

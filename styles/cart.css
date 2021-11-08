@@ -4,7 +4,6 @@
 
 .cart-footer {
   text-align: right;
-  float:right;
   margin-top: 40px;
   margin-left: 40px;
 }
@@ -17,11 +16,22 @@
   border: 1px solid var(--bs-gray-200);
 }
 
-input[type="number"] {
-  width: 100px;
+.cart-summary-container {
+  display: flex;
 }
 
-@media screen and (max-width: 768px) {
+.cart-container {
+  flex-grow: 1;
+}
+
+.cart-image {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  object-position: center center;
+}
+
+@media screen and (max-width: 767px) {
   thead {
     display: none;
   }
@@ -45,7 +55,7 @@ input[type="number"] {
 
   td:first-child {
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
   }
 
   .cart-summary {
@@ -53,9 +63,12 @@ input[type="number"] {
   }
 
   .cart-footer {
-    float:none;
     margin-left: 0px;
     margin-top: 10px;
     height:auto;
   }
+
+  .cart-summary-container {
+    flex-direction: column;
+  }  
 }

@@ -3,18 +3,21 @@
     "id": 1,
     "name": "Chicken breast",
     "price": 17.61,
-    "description": "White chicken meat" 
+    "description": "White chicken meat",
+    "image": "images/chicken_breast.jpg"
   },
   {
     "id": 2,
     "name": "Milk",
     "price": 6.56,
-    "description": "Cow milk (2% fat)"
+    "description": "Cow milk (2% fat)",
+    "image": "images/milk.jpg"
   },
   {
     "id": 3,
     "name": "Tomatoes",
     "price": 5.11,
-    "description": "Cluster of cherry tomatoes"
+    "description": "Cluster of cherry tomatoes",
+    "image": "images/products/tomatoes.jpg"
   }
 ]
