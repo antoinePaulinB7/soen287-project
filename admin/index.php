@@ -37,11 +37,10 @@
     </div>
     <div class="navbar">
       <a href="../index.html">Home</a>
-      <a href="../admin/edit-customer.php">Edit Customer</a>
-      <a href="../admin/edit-order.html">Edit Order</a>
-      <a href="../admin/list-customer.php">List Customer</a>
-      <a href="../admin/list-order.html">List Order</a>
-      <a href="../admin/list-product.php">List Product</a>
+      <a href="edit-order.html">Edit Order</a>
+      <a href="list-customer.php">List Customer</a>
+      <a href="list-order.html">List Order</a>
+      <a href="list-product.php">List Product</a>
     </div>
   </nav>
     <main>

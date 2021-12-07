@@ -1,122 +1,106 @@
-{
-  "aisles" : [
+[
     {
-      "id": "fruits_and_vegetables",
-      "name": "Fruits & Vegetables"
+        "id": "0",
+        "name": "Cluster Tomatoes",
+        "aisle": "Fruits & Vegetables",
+        "price": "5.11",
+        "price_display": "$5.11 avg. ea.",
+        "extra_info1": "(775g avg.)",
+        "extra_info2": "$6.59\/kg.",
+        "inventory": "140",
+        "small_description": "5 tomatoes\/cluster on avg.",
+        "description": "                            Our cluster tomatoes are grown on our farms and are pesticide free and are certainly organic. They are also kept under natural sunlight so that we can harvest a higher quality peoduct. They are also grown seperately from all other vegetables to maintain their quality.                                                                                                                        ",
+        "image": "..\/images\/products\/tomatoes.jpg"
     },
     {
-      "id": "dairy_and_eggs",
-      "name": "Dairy & Eggs"
+        "id": 1,
+        "name": "Apple",
+        "aisle": "Fruits & Vegetables",
+        "price": 0.67,
+        "price_display": "$0.67 avg. ea.",
+        "extra_info1": "(170g avg.)",
+        "extra_info2": "$3.95\/kg.",
+        "inventory": 100,
+        "small_description": "",
+        "description": "No description.",
+        "image": "..\/images\/products\/apple.jpg"
     },
     {
-      "id": "meat_and_poultry",
-      "name": "Meat & Poultry"
+        "id": 2,
+        "name": "Banana",
+        "aisle": "Fruits & Vegetables",
+        "price": 0.33,
+        "price_display": "$0.33 avg. ea.",
+        "extra_info1": "(190g avg.)",
+        "extra_info2": "$1.74\/kg.",
+        "inventory": 100,
+        "small_description": "",
+        "description": "No description.",
+        "image": "..\/images\/products\/banana.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Bag of Oranges",
+        "aisle": "Fruits & Vegetables",
+        "price": 5.99,
+        "price_display": "$5.99 ea.",
+        "extra_info1": "",
+        "extra_info2": "$0.44\/100g.",
+        "inventory": 100,
+        "small_description": "3 lb",
+        "description": "No description.",
+        "image": "..\/images\/products\/bag_of_oranges.jpg"
+    },
+    {
+        "id": 20,
+        "name": "Milk",
+        "aisle": "Dairy & Eggs",
+        "price": 6.56,
+        "price_display": "$6.56 ea.",
+        "extra_info1": "",
+        "extra_info2": "$0.16\/100ml",
+        "inventory": 100,
+        "small_description": "4L",
+        "description": "Cow milk (2% fat)",
+        "image": "..\/images\/products\/milk.jpg"
+    },
+    {
+        "id": 21,
+        "name": "Yogurt",
+        "aisle": "Dairy & Eggs",
+        "price": 6.56,
+        "price_display": "$4.19 ea.",
+        "extra_info1": "",
+        "extra_info2": "$0.84\/100g.",
+        "inventory": 100,
+        "small_description": "500g",
+        "description": "No description.",
+        "image": "..\/images\/products\/yogurt.jpg"
+    },
+    {
+        "id": 30,
+        "name": "Boneless Trimmed Chicken Breasts",
+        "aisle": "Meat & Poultry",
+        "price": 17.61,
+        "price_display": "$17.61 avg. ea.",
+        "extra_info1": "(1,000g avg.)",
+        "extra_info2": "$17.61\/kg.",
+        "inventory": 100,
+        "small_description": "5 breasts per tray",
+        "description": "White chicken meat.",
+        "image": "..\/images\/products\/chicken_breast.jpg"
+    },
+    {
+        "id": 31,
+        "name": "Lean Ground Beef",
+        "aisle": "Meat & Poultry",
+        "price": 4.19,
+        "price_display": "$4.19 ea.",
+        "extra_info1": "$15.85\/1200 g.",
+        "extra_info2": "13.21\/kg.",
+        "inventory": 100,
+        "small_description": "1200g per tray on avg.",
+        "description": "No description.",
+        "image": "..\/images\/products\/ground_beef.jpg"
     }
-  ],
-  "products" : [
-    {
-      "id": 0,
-      "name": "Cluster Tomatoes",
-      "aisle": "Fruits & Vegetables",
-      "price": 5.11,
-      "price_display": "$5.11 avg. ea.",
-      "extra_info1": "(775g avg.)",
-      "extra_info2": "$6.59/kg.",
-      "inventory": 100,
-      "small_description": "5 tomatoes/cluster on avg.",
-      "description": "Our cluster tomatoes are grown on our farms and are pesticide free and are certainly organic. They are also kept under natural sunlight so that we can harvest a higher quality peoduct. They are also grown seperately from all other vegetables to maintain their quality.",
-      "image": "../images/products/tomatoes.jpg"
-    },
-    {
-      "id": 1,
-      "name": "Apple",
-      "aisle": "Fruits & Vegetables",
-      "price": 0.67,
-      "price_display": "$0.67 avg. ea.",
-      "extra_info1": "(170g avg.)",
-      "extra_info2": "$3.95/kg.",
-      "inventory": 100,
-      "small_description": "",
-      "description": "No description.",
-      "image": "../images/products/apple.jpg"
-    },
-    {
-      "id": 2,
-      "name": "Banana",
-      "aisle": "Fruits & Vegetables",
-      "price": 0.33,
-      "price_display": "$0.33 avg. ea.",
-      "extra_info1": "(190g avg.)",
-      "extra_info2": "$1.74/kg.",
-      "inventory": 100,
-      "small_description": "",
-      "description": "No description.",
-      "image": "../images/products/banana.jpg"
-    },
-    {
-      "id": 3,
-      "name": "Bag of Oranges",
-      "aisle": "Fruits & Vegetables",
-      "price": 5.99,
-      "price_display": "$5.99 ea.",
-      "extra_info1": "",
-      "extra_info2": "$0.44/100g.",
-      "inventory": 100,
-      "small_description": "3 lb",
-      "description": "No description.",
-      "image": "../images/products/bag_of_oranges.jpg"
-    },
-    {
-      "id": 20,
-      "name": "Milk",
-      "aisle": "Dairy & Eggs",
-      "price": 6.56,
-      "price_display": "$6.56 ea.",
-      "extra_info1": "",
-      "extra_info2": "$0.16/100ml",
-      "inventory": 100,
-      "small_description": "4L",
-      "description": "Cow milk (2% fat)",
-      "image": "../images/products/milk.jpg"
-    },
-    {
-      "id": 21,
-      "name": "Yogurt",
-      "aisle": "Dairy & Eggs",
-      "price": 6.56,
-      "price_display": "$4.19 ea.",
-      "extra_info1": "",
-      "extra_info2": "$0.84/100g.",
-      "inventory": 100,
-      "small_description": "500g",
-      "description": "No description.",
-      "image": "../images/products/yogurt.jpg"
-    },
-    {
-      "id": 30,
-      "name": "Boneless Trimmed Chicken Breasts",
-      "aisle": "Meat & Poultry",
-      "price": 17.61,
-      "price_display": "$17.61 avg. ea.",
-      "extra_info1": "(1,000g avg.)",
-      "extra_info2": "$17.61/kg.",
-      "inventory": 100,
-      "small_description": "5 breasts per tray",
-      "description": "White chicken meat.",
-      "image": "../images/products/chicken_breast.jpg"
-    },
-    {
-      "id": 31,
-      "name": "Lean Ground Beef",
-      "aisle": "Meat & Poultry",
-      "price": 4.19,
-      "price_display": "$4.19 ea.",
-      "extra_info1": "$15.85/1200 g.",
-      "extra_info2": "13.21/kg.",
-      "inventory": 100,
-      "small_description": "1200g per tray on avg.",
-      "description": "No description.",
-      "image": "../images/products/ground_beef.jpg"
-    }
-  ]
-}
+]

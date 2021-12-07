@@ -37,9 +37,8 @@
       </div>
       <div class="navbar">
         <a href="../index.html">Home</a>
-        <a href="../admin/edit-customer.html">Edit Customer</a>
         <a href="../admin/edit-order.html">Edit Order</a>
-        <a href="../admin/list-customer.html">List Customer</a>
+        <a href="../admin/list-customer.php">List Customer</a>
         <a href="../admin/list-order.html">List Order</a>
         <a href="../admin/list-product.php">List Product</a>
       </div>
@@ -70,7 +69,7 @@
                   <tbody>
 
                   <?php 
-                    $products = json_decode(file_get_contents("../all-products.json"), true)["products"];
+                    $products = json_decode(file_get_contents("../all-products.json"), true);
                     $i = 0;
                     while(isset($products[$i]))
                     {
@@ -83,7 +82,7 @@
                       echo "<td>". $products[strval($i)]["price"] ."$ /kg</td>";
                       echo "<td>";
                       echo "<a class='btnactions' href='edit-product.php?action=edit&index=".strval($i)."' id='edit'> Edit</a>";
-                      echo "<a class='btnactions' href='list-product.php?action=delete&index=".strval($i)."' id='delete'>Delete</a>";
+                      echo "<a class='btnactions' href='delete-product.php?index=".strval($i)."' id='delete'>Delete</a>";
                       echo "</td>";
                       echo "</tr>";
                       $i++;
@@ -99,7 +98,6 @@
         </form>
       </div>
     </main>
-
     <footer>
       <div class="footer">
         <div class="contact">

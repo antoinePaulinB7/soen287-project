@@ -35,35 +35,32 @@
         </div>
         <div class="navbar">
         <a href="../index.html">Home</a>
-        <a href="../admin/edit-customer.html">Edit Customer</a>
         <a href="../admin/edit-order.html">Edit Order</a>
-        <a href="../admin/list-customer.html">List Customer</a>
+        <a href="../admin/list-customer.php">List Customer</a>
         <a href="../admin/list-order.html">List Order</a>
         <a href="../admin/list-product.php">List Product</a>
         </div>
     </nav>
-  
-    <?php
+    <?php 
+        $products = json_decode(file_get_contents("../all-products.json"), true);
+
         if(isset($_GET['action']))
         {
-            $action = $_GET['action']; 
+            if($_GET['action'] == "add") 
+                $i = strval(count($products));
+            else if($_GET['action'] == "edit") 
+                if(isset($_GET['index'])) $i = $_GET['index'];
         }
-        if(isset($_GET['index']))
-        {
-            $i = $_GET['index'];
-        }
-            
-        $products = json_decode(file_get_contents("../all-products.json"), true)["products"];
     ?>
-
     <main>
         <div class="container-fluid">
             <h1>Edit Product</h1>
-            <form>
+            
+            <form method="POST" action=<?php echo '"'; if( isset($i)) echo 'edit-product-process.php?index='.$i; echo '"';?>>
                 <table>
                     <tr>
                         <td style="width:120px"><label for="id">Product ID#: </label></td>
-                        <td><input type="text" id="index" name="index" <?php if(isset($i)){echo "value = '".$products[$i]["id"]."'";} ?>></td>
+                        <td><input type="text" id="id" name="id" <?php if(isset($i)){echo "value = '".$products[$i]["id"]."'";} ?>></td>
                     </tr>
                     <tr>
                         <td style="width:120px;"><label for="name">Product Name: </label></td>
@@ -90,9 +87,9 @@
                         <td style="width:120px"><label for="aisle">Aisle: </label></td>
                         <td><select id="aisle" name="aisle" <?php if(isset($i)){echo "value = '".$products[$i]["aisle"]."'";} ?>>
                         <?php 
-                            $aisles = json_decode(file_get_contents("../all-products.json"), true)["aisles"];
+                            $aisles = json_decode(file_get_contents("../aisles.json"), true);
                             foreach($aisles as &$value){
-                                echo '<option value="'.$value["id"].'">'.$value["name"].'</option>';
+                                echo '<option value="'.$value["name"].'">'.$value["name"].'</option>';
                             }
                             
                             unset($value);
@@ -126,38 +123,6 @@
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     </main>
-
-    <?php
-
-        function getObject() {
-            return array(
-                "index" => $_POST['index'], 
-                "name" => $_POST['name'], 
-                "aisle" => $_POST['aisle'], 
-                "price" => $_POST['price'], 
-                "price_display" => $_POST['price_display'], 
-                "extra_info1" => $_POST['extra_info1'], 
-                "extra_info2" => $_POST['extra_info2'], 
-                "inventory" => $_POST['inventory'], 
-                "small_description" => $_POST['small_description'], 
-                "description" => $_POST['description'], 
-                "image" => $_POST['image']);
-        }
-
-        if($action == "add"){
-            if(isset($_POST['submit'])){
-                $products["products"][strval(count($products))] = getObject();
-                file_put_contents("../all-products.json", json_encode($products));
-            }
-        }
-        else if($action == "edit"){
-            if(isset($_POST['submit'])){
-                $products["products"][$id] = getObject();
-                file_put_contents("../all-products.json", json_encode($products));
-            }
-        }
-    ?>
-
     <footer>
         <div class="footer">
           

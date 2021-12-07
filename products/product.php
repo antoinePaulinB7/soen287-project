@@ -14,13 +14,13 @@
             $i = 0;
         }
         
-        $aisles = json_decode(file_get_contents("../all-products.json"), true)["aisles"];
-        $products = json_decode(file_get_contents("../all-products.json"), true)["products"];
+        $aisles = json_decode(file_get_contents("../aisles.json"), true);
+        $products = json_decode(file_get_contents("../all-products.json"), true);
 
         if(isset($products[$i])){
             foreach($aisles as &$value){
                 if($products[$i]["aisle"] == $value["name"]){
-                    $aisle = $value["id"];
+                    $aisle = $value;
                     break;
                 }
             }
@@ -36,7 +36,7 @@
 
 <head>
   <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1" />
-  <title><?php if(isset($i)){ echo $products[$i]["name"];} else { echo "Product";} ?></title>
+  <title><?php if(isset($i)){ echo $aisle["name"];} else { echo "Product";} ?></title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
@@ -80,17 +80,16 @@
                 <span><a href="../index.html">Home</a></span>
                 </li>
                 <?php
-                    if(isset($products[$i]["aisle"])){
+                    if(isset($aisle)){
                         echo '<li><span>';
                         echo '<a href=';
-                        if(isset($aisle)) echo '"../aisles/aisle.php?aisle='.$aisle.'">';
-                        else echo '#>';
-                        echo $products[$i]["aisle"].'</a>';
+                        echo '"../aisles/aisle.php?aisle='.$aisle["id"].'">';
+                        echo $aisle["name"].'</a>';
                         echo '</span></li>';
                     }
                 ?>
                 <li>
-                <span><a class="active" href="#redtomatoes"><?php if(isset($i)){ echo $products[$i]["name"];} ?></a></span>
+                <span><a class="active" href="#"><?php if(isset($i)){ echo $products[$i]["name"];} ?></a></span>
                 </li>
             </div>
             <div class="container">

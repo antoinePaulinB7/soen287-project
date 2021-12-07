@@ -3,14 +3,13 @@
 
 <?php
 
-    $aisles = json_decode(file_get_contents("../all-products.json"), true)["aisles"];
+    $aisles = json_decode(file_get_contents("../aisles.json"), true);
 
     if(isset($_GET['aisle']))
     {
         foreach($aisles as &$value){
             if($value["id"] == $_GET['aisle']){
-                $aisle = $value["id"];
-                $aisle_name = $value["name"];
+                $aisle = $value;
                 break;
             }
         }
@@ -19,11 +18,10 @@
     } 
     else
     {
-        $aisle = $aisles[0]["id"];
-        $aisle_name = $aisles[0]["name"];
+        $aisle = $aisles[0];
     }
 
-    $products = json_decode(file_get_contents("../all-products.json"), true)["products"];
+    $products = json_decode(file_get_contents("../all-products.json"), true);
 ?>
 
 <head>
@@ -40,7 +38,7 @@
   <link rel="stylesheet" href="../styles/base.css">
   <link rel="stylesheet" href="../styles/aisle.css">
 
-  <title><?php if(isset($aisle_name)){ echo $aisle_name;} else { echo "Aisle";} ?></title>
+  <title><?php if(isset($aisle["name"])){ echo $aisle["name"];} else { echo "Aisle";} ?></title>
 </head>
 
 <body>
@@ -70,7 +68,7 @@
   </nav>
   <main>
     <div class="jumbotron text-center text-secondary bg-light" style="padding:5px; margin-top:20px;">
-      <h2><?php if(isset($aisle_name)){ echo $aisle_name;} else { echo "Aisle";} ?></h2>
+      <h2><?php if(isset($aisle["name"])){ echo $aisle["name"];} else { echo "Aisle";} ?></h2>
     </div>
 
     <div class="container" style="margin-top:30px; margin-bottom:30px;">
@@ -92,7 +90,7 @@
                 if(isset($aisle)){
                     $i = 0;
                     while(isset($products[$i])){
-                        if(isset($products[$i]["aisle"]) && $products[$i]["aisle"] == $aisle_name){
+                        if(isset($products[$i]["aisle"]) && $products[$i]["aisle"] == $aisle["name"]){
                             echo '<div class="card">';
                                 echo '<a href="../products/product.php?index='.$i.'">';
                                     if(isset($products[$i]["image"])){
