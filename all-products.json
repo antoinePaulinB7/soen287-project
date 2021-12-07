@@ -9,7 +9,7 @@
         "extra_info2": "$6.59\/kg.",
         "inventory": "140",
         "small_description": "5 tomatoes\/cluster on avg.",
-        "description": "                            Our cluster tomatoes are grown on our farms and are pesticide free and are certainly organic. They are also kept under natural sunlight so that we can harvest a higher quality peoduct. They are also grown seperately from all other vegetables to maintain their quality.                                                                                                                        ",
+        "description": "Our cluster tomatoes are grown on our farms and are pesticide free and are certainly organic. They are also kept under natural sunlight so that we can harvest a higher quality peoduct. They are also grown seperately from all other vegetables to maintain their quality.",
         "image": "..\/images\/products\/tomatoes.jpg"
     },
     {
@@ -102,5 +102,18 @@
         "small_description": "1200g per tray on avg.",
         "description": "No description.",
         "image": "..\/images\/products\/ground_beef.jpg"
+    },
+    {
+        "id": "125",
+        "name": "Jello",
+        "aisle": "Fruits & Vegetables",
+        "price": "4",
+        "price_display": "$4 ea.",
+        "extra_info1": "",
+        "extra_info2": "",
+        "inventory": "80",
+        "small_description": "Dis a jello",
+        "description": "Yes, dis really a jello                        ",
+        "image": "C:\\xampp\\htdocs\\soen287-project\\admin"
     }
 ]

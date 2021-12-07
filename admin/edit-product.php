@@ -60,32 +60,32 @@
                 <table>
                     <tr>
                         <td style="width:120px"><label for="id">Product ID#: </label></td>
-                        <td><input type="text" id="id" name="id" <?php if(isset($i)){echo "value = '".$products[$i]["id"]."'";} ?>></td>
+                        <td><input type="text" id="id" name="id" <?php if(isset($products[$i]["id"])){echo "value = '".$products[$i]["id"]."'";} ?>></td>
                     </tr>
                     <tr>
                         <td style="width:120px;"><label for="name">Product Name: </label></td>
-                        <td><input type="text" id="name" name="name" <?php if(isset($i)){echo "value = '".$products[$i]["name"]."'";} ?>></td>
+                        <td><input type="text" id="name" name="name" <?php if(isset($products[$i]["name"])){echo "value = '".$products[$i]["name"]."'";} ?>></td>
                     </tr>
                     <tr>
                         <td style="width:120px"><label for="small_description">Short Description: </label></td>
-                        <td><input type="text" id="small_description" name="small_description" <?php if(isset($i)){echo "value = '".$products[$i]["small_description"]."'";}?> ></label></td>
+                        <td><input type="text" id="small_description" name="small_description" <?php if(isset($products[$i]["small_description"])){echo "value = '".$products[$i]["small_description"]."'";}?> ></label></td>
                     </tr>
                     <tr>
                         <td style="width:120px"><label for="description">Description: </label></td>
                         <td><textarea id="description" name="description">
                             <?php 
-                                if(isset($i)) echo $products[$i]["description"];
+                                if(isset($products[$i]["description"])) echo $products[$i]["description"];
                                 else echo "Product description."; 
                             ?>
                         </textarea></td>
                     </tr>
                     <tr>
                         <td style="width:120px"><label for="image">Image: </label></td>
-                        <td><input type="file" accept="image/png, image/jpeg, image/jpg" id="image" name="image" <?php if(isset($i)){echo "value = '".$products[$i]["image"]."'";} ?>></td>
+                        <td><input type="file" accept="image/png, image/jpeg, image/jpg" id="image" name="image"></td>
                     </tr>
                     <tr>
                         <td style="width:120px"><label for="aisle">Aisle: </label></td>
-                        <td><select id="aisle" name="aisle" <?php if(isset($i)){echo "value = '".$products[$i]["aisle"]."'";} ?>>
+                        <td><select id="aisle" name="aisle" <?php if(isset($products[$i]["aisle"])){echo "value = '".$products[$i]["aisle"]."'";} ?>>
                         <?php 
                             $aisles = json_decode(file_get_contents("../aisles.json"), true);
                             foreach($aisles as &$value){
@@ -98,23 +98,23 @@
                     </tr>
                     <tr>
                         <td style="width:120px"><label for="price">Price ($): </label></td>
-                        <td><input type="number" id="price" name="price" <?php if(isset($i)){echo "value = '".$products[$i]["price"]."'";} ?>></td>
+                        <td><input type="number" id="price" name="price" <?php if(isset($products[$i]["price"])){echo "value = '".$products[$i]["price"]."'";} ?>></td>
                     </tr>
                     <tr>
                         <td style="width:120px"><label for="price_display">Display Price: </label></td>
-                        <td><input type="text" id="price_display" name="price_display" <?php if(isset($i)){echo "value = '".$products[$i]["price_display"]."'";} ?>></td>
+                        <td><input type="text" id="price_display" name="price_display" <?php if(isset($products[$i]["price_display"])){echo "value = '".$products[$i]["price_display"]."'";} ?>></td>
                     </tr>
                     <tr>
                         <td style="width:120px"><label for="extra_info1">Average Weight: </label></td>
-                        <td><input type="text" id="extra_info1" name="extra_info1" <?php if(isset($i)){echo "value = '".$products[$i]["extra_info1"]."'";} ?>></td>
+                        <td><input type="text" id="extra_info1" name="extra_info1" <?php if(isset($products[$i]["extra_info1"])){echo "value = '".$products[$i]["extra_info1"]."'";} ?>></td>
                     </tr>
                     <tr>
                         <td style="width:120px"><label for="extra_info2">Price By Weight: </label></td>
-                        <td><input type="text" id="extra_info2" name="extra_info2" <?php if(isset($i)){echo "value = '".$products[$i]["extra_info2"]."'";} ?>></td>
+                        <td><input type="text" id="extra_info2" name="extra_info2" <?php if(isset($products[$i]["extra_info2"])){echo "value = '".$products[$i]["extra_info2"]."'";} ?>></td>
                     </tr>
                     <tr>
                         <td style="width:120px"><label for="inventory">Inventory: </label></td>
-                        <td><input type="number" id="inventory" name="inventory" <?php if(isset($i)){echo "value = '".$products[$i]["inventory"]."'";} ?>></td>
+                        <td><input type="number" id="inventory" name="inventory" <?php if(isset($products[$i]["inventory"])){echo "value = '".$products[$i]["inventory"]."'";} ?>></td>
                     </tr>
                 </table>
                 <input type="submit" value="Submit">

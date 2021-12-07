@@ -18,8 +18,10 @@
             
         if($_POST['image'] == "" && isset($products[$i]))
             $product["image"] = $products[$i]['image'];
-        else
+        else{
             $product["image"] = $_POST['image']; 
+        }
+            
 
         $products[$i] = $product;
         file_put_contents("../all-products.json", json_encode($products, JSON_PRETTY_PRINT));
