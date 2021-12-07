@@ -1,9 +1,42 @@
 <!DOCTYPE html>
 <html>
 
+<?php
+        if(isset($_GET['action'])){
+            $action = $_GET['action']; 
+        }
+        if(isset($_GET['index']))
+        {
+            $i = $_GET['index'];
+        } 
+        else
+        {
+            $i = 0;
+        }
+        
+        $aisles = json_decode(file_get_contents("../all-products.json"), true)["aisles"];
+        $products = json_decode(file_get_contents("../all-products.json"), true)["products"];
+
+        if(isset($products[$i])){
+            foreach($aisles as &$value){
+                if($products[$i]["aisle"] == $value["name"]){
+                    $aisle = $value["id"];
+                    break;
+                }
+            }
+
+            unset($value);
+        } else {
+            header('HTTP/1.1 404 Not Found', true, 404);
+            $_GET['e'] = 404;
+            echo '<p>This product does not exist.<p>';
+            exit();
+        }
+    ?>
+
 <head>
   <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Red Cluster Tomatoes</title>
+  <title><?php if(isset($i)){ echo $products[$i]["name"];} else { echo "Product";} ?></title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
@@ -33,30 +66,12 @@
         </div>
         <div class="navbar">
         <a href="../index.html">Home</a>
-        <a href="../aisles/aisle-1.html">Aisles</a>
+        <a href="../aisles/aisle.php">Aisles</a>
         <a href="../signup.html">Sign Up</a>
         <a href="../login.html">Log In</a>
         <a href="../cart.html">Cart</a>
         </div>
     </nav>
-
-    <?php
-        
-        $allProductsJson = file_get_contents("../all-products.json");
-        $products = json_decode($allProductsJson, true);
-        var_dump($products["2"]);
-        
-        $name = "Cluster Tomatoes";
-        $img = "../images/products/tomatoes.jpg";
-        $priceAvg = "$5.11 avg. ea.";
-        $avgWeight = "(775g avg.)";
-        $pricePerKG = "$6.59 /kg";
-        $description = "Our cluster tomatoes are grown on our farms and are pesticide free "
-                . "and are certainly organic. They are also kept under natural sunlight "
-                . "so that we can harvest a higher quality peoduct. They are also grown "
-                . "seperately from all other vegetables to maintain their quality.";
-    ?>
-
     <main>
         <div class="top"></div>
         <div style="flex-direction: column; display: flex">
@@ -64,27 +79,32 @@
                 <li>
                 <span><a href="../index.html">Home</a></span>
                 </li>
+                <?php
+                    if(isset($products[$i]["aisle"])){
+                        echo '<li><span>';
+                        echo '<a href=';
+                        if(isset($aisle)) echo '"../aisles/aisle.php?aisle='.$aisle.'">';
+                        else echo '#>';
+                        echo $products[$i]["aisle"].'</a>';
+                        echo '</span></li>';
+                    }
+                ?>
                 <li>
-                <span><a href="../aisles/aisle-1.html">Aisles</a></span>
-                </li>
-                <li>
-                <span><a href="../aisles/aisle-1.html">Fruits & Vegetables</a></span>
-                </li>
-                <li>
-                <span><a class="active" href="#redtomatoes">Red Cluster Tomatoes</a></span>
+                <span><a class="active" href="#redtomatoes"><?php if(isset($i)){ echo $products[$i]["name"];} ?></a></span>
                 </li>
             </div>
             <div class="container">
 
             <div class="left">
-                <?php echo "<img width='300px' height='auto' src='$img' alt='$name' />"; ?>
+                <?php if(isset($i)){echo "<img width='300px' height='auto' src='".$products[$i]['image']."' alt='".$products[$i]['name']."' />";} ?>
             </div>
             <div class="right">
                 <?php 
-                    echo "<p1>$name</p1><br/><br/>"; 
-                    echo "<p2 id='unit'>$priceAvg </p2>";
-                    echo "<p3>$avgWeight</p3> <br />";
-                    echo "<p4>$pricePerKG</p4> <br /> <br />";
+                    if(isset($products[$i]["name"])) echo "<p1>".$products[$i]['name']."</p1><br/><br/>"; 
+                    if(isset($products[$i]["price_display"])) echo "<p2 id='unit'>".$products[$i]["price_display"]."</p2> ";
+                    if(isset($products[$i]["extra_info1"])) echo "<p3>".$products[$i]["extra_info1"]."</p3>";
+                    if(isset($products[$i]["extra_info2"])) echo "<br /><p4>".$products[$i]["extra_info2"]."</p4>";
+                    echo "<br /> <br />";
                 ?>
                 
                 <div class="quantity-wrapper">
@@ -109,7 +129,8 @@
                     </div>
                     <?php 
                         echo "<p id='theDetailedDescription' class='descriptionText is-hidden'>"; 
-                        echo "$description";
+                        if(isset($products[$i]['description'])) echo $products[$i]['description'];
+                        else echo "No description.";
                         echo "<i class='fas fa-minus-circle' onclick='hideIt()'></i><br/></p>";
                     ?>
                     
