@@ -72,12 +72,7 @@
                     </tr>
                     <tr>
                         <td style="width:120px"><label for="description">Description: </label></td>
-                        <td><textarea id="description" name="description">
-                            <?php 
-                                if(isset($products[$i]["description"])) echo $products[$i]["description"];
-                                else echo "Product description."; 
-                            ?>
-                        </textarea></td>
+                        <td><textarea id="description" name="description"><?php if(isset($products[$i]["description"])) echo $products[$i]["description"]; else echo "Product description.";?></textarea></td>
                     </tr>
                     <tr>
                         <td style="width:120px"><label for="image">Image: </label></td>
@@ -98,7 +93,7 @@
                     </tr>
                     <tr>
                         <td style="width:120px"><label for="price">Price ($): </label></td>
-                        <td><input type="number" id="price" name="price" <?php if(isset($products[$i]["price"])){echo "value = '".$products[$i]["price"]."'";} ?>></td>
+                        <td><input type="number" id="price" name="price" <?php if(isset($products[$i]["price"])){echo "value = '".$products[$i]["price"]."'";} ?> style="width:60px;"></td>
                     </tr>
                     <tr>
                         <td style="width:120px"><label for="price_display">Display Price: </label></td>
@@ -114,7 +109,7 @@
                     </tr>
                     <tr>
                         <td style="width:120px"><label for="inventory">Inventory: </label></td>
-                        <td><input type="number" id="inventory" name="inventory" <?php if(isset($products[$i]["inventory"])){echo "value = '".$products[$i]["inventory"]."'";} ?>></td>
+                        <td><input type="number" id="inventory" name="inventory" <?php if(isset($products[$i]["inventory"])){echo "value = '".$products[$i]["inventory"]."'";} ?> style="width:60px;"></td>
                     </tr>
                 </table>
                 <input type="submit" value="Submit">
