@@ -56,7 +56,7 @@
         <div class="container-fluid">
             <h1>Edit Product</h1>
             
-            <form method="POST" action=<?php echo '"'; if( isset($i)) echo 'edit-product-process.php?index='.$i; echo '"';?>>
+            <form method="POST" enctype="multipart/form-data" action=<?php echo '"'; if( isset($i)) echo 'edit-product-process.php?index='.$i; echo '"';?>>
                 <table>
                     <tr>
                         <td style="width:120px"><label for="id">Product ID#: </label></td>
