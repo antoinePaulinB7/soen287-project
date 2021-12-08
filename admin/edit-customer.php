@@ -36,13 +36,11 @@
       <img src="../images/logo.png" alt="logo" />
     </div>
     <div class="navbar">
-      <a href="../index.html">Home</a>
-      <a href="../admin/edit-customer.php">Edit Customer</a>
-      <a href="../admin/edit-order.html">Edit Order</a>
-      <a href="../admin/edit-product.html">Edit Product</a>
+      <a href="../index.php">Home</a>
+      <a href="../admin/edit-order.php">Edit Order</a>
       <a href="../admin/list-customer.php">List Customer</a>
       <a href="../admin/list-order.html">List Order</a>
-      <a href="../admin/list-product.html">List Product</a>
+      <a href="../admin/list-product.php">List Product</a>
     </div>
   </nav>
   <?php
@@ -53,7 +51,7 @@
     {
       $id = $_GET['id'];
     }
-    $json = json_decode(file_get_contents("../soen287-project/userlist.JSON", "userlist.JSON"),true);
+    $json = json_decode(file_get_contents("../userlist.JSON", "userlist.JSON"),true);
   ?>
     <main>
         <div class="container">
@@ -107,14 +105,30 @@
     <?php
       if($action == "add"){
         if(isset($_POST['submit'])){
-          $json[strval(count($json))] = array("firstname" => $_POST['firstname'], "middlename" => $_POST['middlename'], "lastname" => $_POST['lastname'], "emailaddress" => $_POST['emailaddress'], "password" => $_POST['password'], "city" => $_POST['city'],"streetaddress" => $_POST['streetaddress'],"postalcode" => $_POST['postalcode']);
-          file_put_contents("../soen287-project/userlist.JSON", json_encode($json));
+          $json[strval(count($json))] = array(
+            "firstname" => $_POST['firstname'], 
+            "middlename" => $_POST['middlename'], 
+            "lastname" => $_POST['lastname'], 
+            "emailaddress" => $_POST['emailaddress'], 
+            "password" => $_POST['password'], 
+            "city" => $_POST['city'],
+            "streetaddress" => $_POST['streetaddress'],
+            "postalcode" => $_POST['postalcode']);
+          file_put_contents("../userlist.JSON", json_encode($json, JSON_PRETTY_PRINT));
         }
       }
       else if($action == "edit"){
         if(isset($_POST['submit'])){
-          $json[$id] = array("firstname" => $_POST['firstname'], "middlename" => $_POST['middlename'], "lastname" => $_POST['lastname'], "emailaddress" => $_POST['emailaddress'], "password" => $_POST['password'], "city" => $_POST['city'],"streetaddress" => $_POST['streetaddress'],"postalcode" => $_POST['postalcode']);
-          file_put_contents("../soen287-project/userlist.JSON", json_encode($json));
+          $json[$id] = array(
+            "firstname" => $_POST['firstname'], 
+            "middlename" => $_POST['middlename'], 
+            "lastname" => $_POST['lastname'], 
+            "emailaddress" => $_POST['emailaddress'], 
+            "password" => $_POST['password'], 
+            "city" => $_POST['city'],
+            "streetaddress" => $_POST['streetaddress'],
+            "postalcode" => $_POST['postalcode']);
+          file_put_contents("../userlist.JSON", json_encode($json, JSON_PRETTY_PRINT));
         }
       }
     ?>

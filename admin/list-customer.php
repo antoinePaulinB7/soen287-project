@@ -31,13 +31,11 @@
       <img src="../images/logo.png" alt="logo" />
     </div>
     <div class="navbar">
-      <a href="../index.html">Home</a>
-      <a href="../admin/edit-customer.php">Edit Customer</a>
-      <a href="../admin/edit-order.html">Edit Order</a>
-      <a href="../admin/edit-product.html">Edit Product</a>
-      <a href="../admin/list-customer.php">List Customer</a>
-      <a href="../admin/list-order.html">List Order</a>
-      <a href="../admin/list-product.html">List Product</a>
+      <a href="../index.php">Home</a>
+      <a href="edit-order.php">Edit Order</a>
+      <a href="list-customer.php">List Customer</a>
+      <a href="list-order.html">List Order</a>
+      <a href="list-product.php">List Product</a>
     </div>
   </nav>
 
@@ -52,7 +50,7 @@
             <th>Actions</th>
           </thead>
           <?php
-          $userInfo = json_decode(file_get_contents("../soen287-project/userlist.JSON", "userlist.JSON"),true);
+          $userInfo = json_decode(file_get_contents("../userlist.JSON", "userlist.JSON"),true);
           $i = 0;
           //echo $userInfo[$i]["firstname"];
           while(isset($userInfo[$i]))
@@ -60,8 +58,8 @@
               echo "<tr>";
               echo "<td>". $userInfo[strval($i)]["firstname"] ."</td>";
               echo "<td>". $userInfo[strval($i)]["streetaddress"] ."</td>";
-              echo "<td>". "<a class=\"button\" href=\"../admin/edit-customer.php?action=edit&id=".strval($i)."\">Edit User</a>" ."</td>";
-              echo "<td>". "<a class=\"button\" href=\"../admin/list-customer.php?action=delete&id=".strval($i)."\">Delete User</a>" ."</td>"; 
+              echo "<td>". "<a class='button' href='edit-customer.php?action=edit&id=".strval($i)."'>Edit User</a>" ."</td>";
+              echo "<td>". "<a class='button' href='list-customer.php?action=delete&id=".strval($i)."'>Delete User</a>" ."</td>"; 
               echo "</tr>";
               $i++;
           }
@@ -69,7 +67,7 @@
         </table>
       </div>
       <div class="list-user-footer">
-        <a class="button" href="../admin/edit-customer.php?action=add">Add user</a>
+        <a class="button" href="edit-customer.php?action=add">Add user</a>
       </div>
     </form>
   </main>
@@ -79,7 +77,7 @@
         $id = $_GET['id'];
         unset($userInfo[$id]); 
         $userInfo = array_values($userInfo);
-        file_put_contents("../soen287-project/userlist.JSON", json_encode($userInfo));
+        file_put_contents("../userlist.JSON", json_encode($userInfo, JSON_PRETTY_PRINT));
       }
     }
   ?>
