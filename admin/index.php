@@ -36,7 +36,7 @@
       <img src="../images/logo.png" alt="logo" />
     </div>
     <div class="navbar">
-      <a href="../index.html">Home</a>
+      <a href="../index.php">Home</a>
       <a href="edit-order.php">Edit Order</a>
       <a href="list-customer.php">List Customer</a>
       <a href="list-order.html">List Order</a>

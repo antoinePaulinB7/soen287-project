@@ -65,7 +65,7 @@
         <img src="../images/logo.png" alt="logo" />
         </div>
         <div class="navbar">
-        <a href="../index.html">Home</a>
+        <a href="../index.php">Home</a>
         <a href="../aisles/aisle.php">Aisles</a>
         <a href="../signup.html">Sign Up</a>
         <a href="../login.html">Log In</a>

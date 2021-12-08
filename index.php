@@ -37,7 +37,7 @@
       <img src="images/logo.png" alt="logo"/>
     </div>
     <div class="navbar">
-      <a href="index.html">Home</a>
+      <a href="index.php">Home</a>
       <a href="aisles/aisle.php">Aisles</a>
       <a href="signup.html">Sign Up</a>
       <a href="login.html">Log In</a>
@@ -48,24 +48,13 @@
     <div class="container-fluid homepage">
       <div class="side">
         <h3>Categories</h3>
-        <a href="aisles/aisle-1.html">
-          <p>Fruits and Vegetables</p>
-        </a>
-        <a href="aisles/aisle-2.html">
-          <p>Dairy and Eggs</p>
-        </a>
-        <a href="aisles/aisle-5.html">
-          <p>Meat and Poultry</p>
-        </a>
-        <a href="#">
-          <p>Pantry</p>
-        </a>
-        <a href="#">
-          <p>Beverages</p>
-        </a>
-        <a href="#">
-          <p>Fish and Seafood</p>
-        </a>
+        <?php 
+            $aisles = json_decode(file_get_contents("aisles.json"), true);
+            foreach($aisles as &$value){
+                echo '<a href="aisles/aisle.php?aisle='.$value["id"].'">'.$value["name"].'</a><br>';
+            }
+            unset($value);
+        ?>
       </div>
       <div class="main">
         <p>Welcome to our store where high quality goods meets bargain prices.</p>
