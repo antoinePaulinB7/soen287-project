@@ -102,18 +102,5 @@
         "small_description": "1200g per tray on avg.",
         "description": "No description.",
         "image": "..\/images\/products\/ground_beef.jpg"
-    },
-    {
-        "id": "125",
-        "name": "Jello",
-        "aisle": "Fruits & Vegetables",
-        "price": "4",
-        "price_display": "$4 ea.",
-        "extra_info1": "",
-        "extra_info2": "",
-        "inventory": "80",
-        "small_description": "Dis a jello",
-        "description": "Dis a jello",
-        "image": null
     }
 ]

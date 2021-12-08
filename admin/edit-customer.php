@@ -37,7 +37,7 @@
     </div>
     <div class="navbar">
       <a href="../index.html">Home</a>
-      <a href="../admin/edit-order.html">Edit Order</a>
+      <a href="../admin/edit-order.php">Edit Order</a>
       <a href="../admin/list-customer.php">List Customer</a>
       <a href="../admin/list-order.html">List Order</a>
       <a href="../admin/list-product.php">List Product</a>

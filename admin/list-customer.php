@@ -32,7 +32,7 @@
     </div>
     <div class="navbar">
       <a href="../index.html">Home</a>
-      <a href="edit-order.html">Edit Order</a>
+      <a href="edit-order.php">Edit Order</a>
       <a href="list-customer.php">List Customer</a>
       <a href="list-order.html">List Order</a>
       <a href="list-product.php">List Product</a>

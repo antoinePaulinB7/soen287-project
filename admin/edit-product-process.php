@@ -14,46 +14,46 @@
             "extra_info2" => $_POST['extra_info2'], 
             "inventory" => $_POST['inventory'], 
             "small_description" => $_POST['small_description'], 
-            "description" => $_POST['description']); 
-        
+            "description" => $_POST['description']);
 
-        $file = $_POST['image'];
-
-        if($_POST['image'] == "" && isset($products[$i]))
-            $product["image"] = $products[$i]['img'];
+        if((!isset($_FILES['image']["name"]) || $_FILES['image']["name"] == "") && isset($products[$i]["images"]))
+            $product["image"] = $products[$i]['image'];
         else{
             $target_dir = "../images/products/";
-            $target_file = $target_dir . basename($_FILES[$file]["name"]);
+            $target_file = $target_dir . basename($_FILES['image']["name"]);
             $uploadOk = 1;
             $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+            
             // Check if image file is a actual image or fake image
-            if(isset($_POST["submit"])) {
-                $check = getimagesize($_FILES[$file]["tmp_name"]);
-                if($check !== false) {
-                    echo "File is an image - " . $check["mime"] . ".";
-                    $uploadOk = 1;
-                } else {
-                    echo "File is not an image.";
-                    $uploadOk = 0;
-                }
+            $check = getimagesize($_FILES['image']["tmp_name"]);
+            if($check !== false) {
+                echo "File is an image - " . $check["mime"] . ".";
+                $uploadOk = 1;
+            } else {
+                echo "File is not an image.";
+                $uploadOk = 0;
             }
 
-            if($uploadOk && move_uploaded_file($_FILES[$file]["tmp_name"], $target_file)){
-                $product["img"] = htmlspecialchars(basename($_FILES[$file]["name"])) ; 
+            // Check if file already exists
+            if (file_exists($target_file)) {
+                echo "Sorry, file already exists.";
+                $uploadOk = 0;
+                $product["image"] = $target_file; 
             }
-            else if(isset($products[$i])) $product["image"] = $products[$i]['image'];
+            else if($uploadOk && move_uploaded_file($_FILES['image']["tmp_name"], $target_file)){
+                $product["image"] = $target_file; 
+            }
+            else if(isset($products[$i]["image"])) $product["image"] = $products[$i]['image'];
             else $product["image"] = "";
         }
         
-        echo $product["image"];
-
         $products[$i] = $product;
         file_put_contents("../all-products.json", json_encode($products, JSON_PRETTY_PRINT));
 
-        //header("Location:edit-product.php?action=edit&index=".$i);
-        //exit();
+        header("Location:edit-product.php?action=edit&index=".$i);
+        exit();
     }  
 
-    //header("Location:list-product.php");
-    //exit();
+    header("Location:list-product.php");
+    exit();
 ?>
