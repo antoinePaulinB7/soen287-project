@@ -125,7 +125,7 @@ class Cart {
         </tbody>
       `;
     } else {
-      cartHtml = `<tr><td><p>Cart is empty!</p><a href="/">Continue shopping</a></td></tr>`;
+      cartHtml = `<tr><td><p>Cart is empty!</p><a href="../index.php">Continue shopping</a></td></tr>`;
     }
 
     document.querySelectorAll('.js-cart').forEach(cart => cart.innerHTML = cartHtml);

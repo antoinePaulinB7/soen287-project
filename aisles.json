@@ -1,0 +1,14 @@
+[
+    {
+      "id": "fruits_and_vegetables",
+      "name": "Fruits & Vegetables"
+    },
+    {
+      "id": "dairy_and_eggs",
+      "name": "Dairy & Eggs"
+    },
+    {
+      "id": "meat_and_poultry",
+      "name": "Meat & Poultry"
+    }
+]

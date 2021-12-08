@@ -36,13 +36,11 @@
       <img src="../images/logo.png" alt="logo" />
     </div>
     <div class="navbar">
-      <a href="../index.html">Home</a>
-      <a href="../admin/edit-customer.html">Edit Customer</a>
-      <a href="../admin/edit-order.php">Edit Order</a>
-      <a href="../admin/edit-product.html">Edit Product</a>
-      <a href="../admin/list-customer.html">List Customer</a>
-      <a href="../admin/list-order.html">List Order</a>
-      <a href="../admin/list-product.html">List Product</a>
+      <a href="../index.php">Home</a>
+      <a href="edit-order.php">Edit Order</a>
+      <a href="list-customer.php">List Customer</a>
+      <a href="list-order.html">List Order</a>
+      <a href="list-product.php">List Product</a>
     </div>
   </nav>
     <main>
