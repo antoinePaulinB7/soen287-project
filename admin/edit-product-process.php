@@ -18,14 +18,14 @@
 
         if((!isset($_FILES['image']["name"]) || $_FILES['image']["name"] == "") && isset($products[$i]["images"]))
             $product["image"] = $products[$i]['image'];
-        else{
+        else if(isset($_FILES['image']["name"])) {
             $target_dir = "../images/products/";
             $target_file = $target_dir . basename($_FILES['image']["name"]);
             $uploadOk = 1;
             $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
             
             // Check if image file is a actual image or fake image
-            $check = getimagesize($_FILES['image']["tmp_name"]);
+            $check = getimagesize($_FILES["image"]["tmp_name"]);
             if($check !== false) {
                 echo "File is an image - " . $check["mime"] . ".";
                 $uploadOk = 1;
@@ -45,7 +45,8 @@
             }
             else if(isset($products[$i]["image"])) $product["image"] = $products[$i]['image'];
             else $product["image"] = "";
-        }
+        } else
+            $product["image"] = "";
         
         $products[$i] = $product;
         file_put_contents("../all-products.json", json_encode($products, JSON_PRETTY_PRINT));
