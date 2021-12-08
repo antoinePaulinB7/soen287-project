@@ -16,7 +16,7 @@
             "small_description" => $_POST['small_description'], 
             "description" => $_POST['description']);
 
-        if(isset($_FILES['image']) && !empty($_FILES['image'])) {
+        if(isset($_FILES['image']) && is_uploaded_file($_FILES['image']['tmp_name'])) {
             $target_dir = "../images/products/";
             $target_file = $target_dir . basename($_FILES['image']["name"]);
             $uploadOk = 1;
