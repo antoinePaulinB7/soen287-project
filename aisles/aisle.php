@@ -92,17 +92,20 @@
                     while(isset($products[$i])){
                         if(isset($products[$i]["aisle"]) && $products[$i]["aisle"] == $aisle["name"]){
                             echo '<div class="card">';
-                                echo '<a href="../products/product.php?index='.$i.'" style="text-decoration: none;">';
-                                    if(isset($products[$i]["image"])){
-                                        echo '<img class="card-img-top mx-auto d-block" src="'.$products[$i]["image"].'" ';
-                                        if(isset($products[$i]["name"])) echo 'alt="'.$products[$i]["name"].'" ';
-                                        echo '>';
-                                    }
-                                  echo '<div class="card-body">';
-                                      if(isset($products[$i]["name"])) echo '<h5 class="card-title">'.$products[$i]["name"].'</h5>';
+                                if(isset($products[$i]["image"])){
+                                  echo '<a href="../products/product.php?index='.$i.'">';
+                                    echo '<img class="card-img-top mx-auto d-block" src="'.$products[$i]["image"].'" ';
+                                    if(isset($products[$i]["name"])) echo 'alt="'.$products[$i]["name"].'" ';
+                                    echo '>';
+                                  echo '</a>';
+                                }
+                                echo '<div class="card-body">';
+                                      if(isset($products[$i]["name"])){
+                                        echo '<a href="../products/product.php?index='.$i.'" style="text-decoration: none;">';
+                                        echo '<h5 class="card-title">'.$products[$i]["name"].'</h5></a>';
+                                      }
                                       if(isset($products[$i]["small_description"])) echo '<p class="card-text text-muted">'.$products[$i]["small_description"].'</p>';
-                                  echo '</div>';
-                                echo '</a>';
+                                echo '</div>';
                                 echo '<div class="card-footer">';
                                     if(isset($products[$i]["small_description"])) echo '<p>'.$products[$i]["price_display"].'</p>';
                                     echo '<p><small class="text-muted">';
